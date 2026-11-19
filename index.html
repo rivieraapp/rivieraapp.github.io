@@ -216,10 +216,6 @@
   .hl-dot[aria-current] { width: 32px; }
   .hl-dot[aria-current]::before { width: 24px; margin-left: -12px; background: var(--text); }
   .hl-dot:focus-visible { outline-offset: -2px; border-radius: 999px; }
-  /* card 4 on phones: the crop would end at the horn row, so the screen shows its lower part (the door lock card) */
-  @media (max-width: 734px) { .shot.low .screen img { transform: translateY(-10%); } }
-  @media (max-width: 379px) { .shot.low .screen img { transform: translateY(-18%); } }
-  @media (max-width: 339px) { .shot.low .screen img { transform: translateY(-32%); } }
 
   /* bento */
   .bento { background: var(--ink); }
@@ -538,7 +534,7 @@
         <div class="lift">
           <div class="phone">
             <div class="body">
-              <div class="screen"><img src="img/screens/dashboard-560.webp" srcset="img/screens/dashboard-360.webp 360w, img/screens/dashboard-560.webp 560w, img/screens/dashboard-840.webp 840w" sizes="(min-width:1069px) 415px, (min-width:735px) 302px, max(219px, min(62vw, 283px))" width="560" height="1218" decoding="async" fetchpriority="high" alt="Dashboard of Riviera: fuel and range, consumption, mileage and a map of where the car is parked."></div>
+              <div class="screen"><img src="img/screens/dashboard-560.webp" srcset="img/screens/dashboard-360.webp 360w, img/screens/dashboard-560.webp 560w, img/screens/dashboard-840.webp 840w" sizes="(min-width:1069px) 415px, (min-width:735px) 302px, max(219px, min(62vw, 283px))" width="560" height="1218" decoding="async" fetchpriority="high" alt="Dashboard of Riviera while the car charges: range on fuel and charge, battery and fuel levels, charging time left, the lock status, consumption, mileage and a map of where the car is parked."></div>
               <span class="island" aria-hidden="true"></span>
             </div>
           </div>
@@ -569,14 +565,14 @@
       <div class="story">
 
         <div class="chapter">
-          <div class="step" id="ch-dashboard">
-            <p class="kicker">Dashboard</p>
+          <div class="step" id="ch-fuel">
+            <p class="kicker">Fuel and charge</p>
             <h3><span class="nb">How full.</span> <span class="nb">How far.</span> <span class="nb">How recent.</span></h3>
-            <p class="txt"><strong>Riviera shows how old the latest reading&nbsp;is.</strong> On an electric car, you also see the charge level and the charging time left.<sup><a href="#fn3" aria-label="Footnote 3">3</a></sup></p>
+            <p class="txt"><strong>Riviera shows how old the latest reading&nbsp;is.</strong> Next to the fuel level and range: your average fuel consumption and what fuel and charging cost you.<sup><a href="#fn3" aria-label="Footnote 3">3</a></sup></p>
           </div>
           <figure class="phone is-on">
             <div class="body">
-              <div class="screen"><img src="img/screens/charging-560.webp" srcset="img/screens/charging-360.webp 360w, img/screens/charging-560.webp 560w, img/screens/charging-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="Dashboard of an electric car while it charges: battery level, range, charging time left, efficiency and a map."></div>
+              <div class="screen"><img src="img/screens/fuel-560.webp" srcset="img/screens/fuel-360.webp 360w, img/screens/fuel-560.webp 560w, img/screens/fuel-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="Fuel and Charging Records: fuel level, range and the time of the reading, average consumption, fuel and charging cost per distance, and fuel totals."></div>
               <span class="island" aria-hidden="true"></span>
             </div>
           </figure>
@@ -587,15 +583,15 @@
             <p class="kicker">Controls</p>
             <h3>Horn, lights and climate, from your phone.</h3>
             <p class="fine lim">What works depends on your model. Climate needs a plug-in or electric car.</p>
-            <p class="txt"><strong>Sound the horn, flash the lights or start climate pre-conditioning.</strong> Choose the cabin temperature, or schedule when it starts.</p>
+            <p class="txt"><strong>Sound the horn, flash the lights or start climate pre&#8209;conditioning.</strong> Choose the cabin temperature, or schedule when it starts. On the few models that report it, the door lock card shows whether the car is locked, with the&nbsp;time.</p>
             <details class="more">
               <summary>Which cars accept horn and lights?</summary>
-              <p>Mostly cars with OpenR Link, the touchscreen system in newer Renaults (about 2022 onward), such as the Austral and Mégane E-Tech. Most older Easy Link and R-Link 2 cars refuse the command, and Riviera tells you so. Settings › Help &amp; Support › Supported Vehicles shows the system for each model.</p>
+              <p>Mostly cars with OpenR Link, the touchscreen system in newer Renaults (about 2022 onward), such as the Austral, Rafale and Mégane E-Tech. Most older Easy Link and R-Link 2 cars refuse the command, and Riviera tells you so. Settings › Help &amp; Support › Supported Vehicles shows the system for each model.</p>
             </details>
           </div>
           <figure class="phone">
             <div class="body">
-              <div class="screen"><img src="img/screens/controls-560.webp" srcset="img/screens/controls-360.webp 360w, img/screens/controls-560.webp 560w, img/screens/controls-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="Controls screen of an electric car: sound the horn, flash the lights, the door lock status, and climate pre-conditioning with a target temperature and a start button."></div>
+              <div class="screen"><img src="img/screens/controls-560.webp" srcset="img/screens/controls-360.webp 360w, img/screens/controls-560.webp 560w, img/screens/controls-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="Controls screen: sound the horn, flash the lights or both, the door lock status with the time the car reported it, and climate pre-conditioning with a target temperature and a Start button."></div>
               <span class="island" aria-hidden="true"></span>
             </div>
           </figure>
@@ -619,11 +615,11 @@
           <div class="step" id="ch-costs">
             <p class="kicker">Costs</p>
             <h3>What the car costs.</h3>
-            <p class="txt"><strong>Each month, and per kilometre or mile.</strong> Fuel and maintenance, next to lease, insurance and inspection.</p>
+            <p class="txt"><strong>Each month, and per kilometre or mile.</strong> Fuel, charging and maintenance, next to lease, insurance and inspection.</p>
           </div>
           <figure class="phone">
             <div class="body">
-              <div class="screen"><img src="img/screens/costs-560.webp" srcset="img/screens/costs-360.webp 360w, img/screens/costs-560.webp 560w, img/screens/costs-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="What the car costs: the monthly cost and the cost per distance, split into lease, insurance, vignette and inspection, fuel and maintenance."></div>
+              <div class="screen"><img src="img/screens/costs-560.webp" srcset="img/screens/costs-360.webp 360w, img/screens/costs-560.webp 560w, img/screens/costs-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="What the car costs: the monthly cost and the cost per distance, split into lease, insurance, vignette and inspection, fuel, charging and maintenance."></div>
               <span class="island" aria-hidden="true"></span>
             </div>
           </figure>
@@ -637,7 +633,7 @@
           </div>
           <figure class="phone">
             <div class="body">
-              <div class="screen"><img src="img/screens/documents-560.webp" srcset="img/screens/documents-360.webp 360w, img/screens/documents-560.webp 560w, img/screens/documents-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="Ownership, Services tab: the next service item, then four dates required by law in Romania, tracked: driving licence, periodic inspection (ITP), third-party insurance (RCA) and the road vignette, each with its due date."></div>
+              <div class="screen"><img src="img/screens/documents-560.webp" srcset="img/screens/documents-360.webp 360w, img/screens/documents-560.webp 560w, img/screens/documents-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="Ownership, Services tab: the Service Schedule with the next service, brake fluid, then four dates required by law in Romania, tracked: driving licence, periodic inspection (ITP), third-party insurance (RCA) and the road vignette, each with its due date."></div>
               <span class="island" aria-hidden="true"></span>
             </div>
           </figure>
@@ -651,7 +647,7 @@
           </div>
           <figure class="phone">
             <div class="body">
-              <div class="screen"><img src="img/screens/parking-560.webp" srcset="img/screens/parking-360.webp 360w, img/screens/parking-560.webp 560w, img/screens/parking-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="Full-screen map of central Bucharest with the parked car beside Cișmigiu Gardens, nearby places, and Satellite, History and Directions buttons."></div>
+              <div class="screen"><img src="img/screens/parking-560.webp" srcset="img/screens/parking-360.webp 360w, img/screens/parking-560.webp 560w, img/screens/parking-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="Full-screen map of central Bucharest with the parked car near Piața Revoluției, nearby places, and Satellite, History and Directions buttons."></div>
               <span class="island" aria-hidden="true"></span>
             </div>
           </figure>
@@ -672,13 +668,13 @@
           <div class="card" role="group" aria-roledescription="slide" aria-label="1 of 7">
             <div class="copy">
               <p class="tag">Fill-ups</p>
-              <h3>Every fill-up, in one place.</h3>
+              <h3>Consumption, fill-up by fill-up.</h3>
               <p>Type a fill-up or scan a Romanian or English receipt, then follow consumption and fuel cost.</p>
             </div>
             <div class="shot">
               <div class="phone">
                 <div class="body">
-                  <div class="screen"><img src="img/screens/fuel-560.webp" srcset="img/screens/fuel-360.webp 360w, img/screens/fuel-560.webp 560w, img/screens/fuel-840.webp 840w" sizes="(min-width:1069px) 302px, (min-width:735px) 245px, min(59vw, 238px)" width="560" height="1218" loading="lazy" decoding="async" alt="Fuel Records: fuel level, range, average consumption, cost per distance, fuel totals and the latest fill-ups."></div>
+                  <div class="screen"><img src="img/screens/consumption-560.webp" srcset="img/screens/consumption-360.webp 360w, img/screens/consumption-560.webp 560w, img/screens/consumption-840.webp 840w" sizes="(min-width:1069px) 302px, (min-width:735px) 245px, min(59vw, 238px)" width="560" height="1218" loading="lazy" decoding="async" alt="Consumption: the average from four measured fill-ups, a chart of each fill-up by month, and the best and worst fill-up, with tabs for the price trend and the cost of each fill-up."></div>
                   <span class="island" aria-hidden="true"></span>
                 </div>
               </div>
@@ -703,33 +699,18 @@
             <div class="copy">
               <p class="tag">Service Schedule</p>
               <h3>Every service item, on one list.</h3>
-              <p>Tyres, brake fluid, filters and more, each with a due date, the distance left and a tap to add it to Calendar and Reminders.</p>
+              <p>Tyres, brake fluid, filters and more, with due dates, the distance left and a tap to add it to Calendar and Reminders.</p>
             </div>
             <div class="shot">
               <div class="phone">
                 <div class="body">
-                  <div class="screen"><img src="img/screens/services-560.webp" srcset="img/screens/services-360.webp 360w, img/screens/services-560.webp 560w, img/screens/services-840.webp 840w" sizes="(min-width:1069px) 302px, (min-width:735px) 245px, min(59vw, 238px)" width="560" height="1218" loading="lazy" decoding="async" alt="Service Schedule: all items on schedule, with tyre rotation, brake fluid, filters, spark plugs and wiper blades, each with a due date and distance left."></div>
+                  <div class="screen"><img src="img/screens/services-560.webp" srcset="img/screens/services-360.webp 360w, img/screens/services-560.webp 560w, img/screens/services-840.webp 840w" sizes="(min-width:1069px) 302px, (min-width:735px) 245px, min(59vw, 238px)" width="560" height="1218" loading="lazy" decoding="async" alt="Service Schedule: nothing overdue or due soon, eleven items on schedule and one not tracked, with due dates and, for most, the distance left; brake fluid, first, has a date only."></div>
                   <span class="island" aria-hidden="true"></span>
                 </div>
               </div>
             </div>
           </div>
           <div class="card" role="group" aria-roledescription="slide" aria-label="4 of 7">
-            <div class="copy">
-              <p class="tag">Lock status</p>
-              <h3>The last report, with its time.</h3>
-              <p>The door lock card shows the last status your car reported, and when, on the few models that report it.</p>
-            </div>
-            <div class="shot low">
-              <div class="phone">
-                <div class="body">
-                  <div class="screen"><img src="img/screens/controls-hybrid-560.webp" srcset="img/screens/controls-hybrid-360.webp 360w, img/screens/controls-hybrid-560.webp 560w, img/screens/controls-hybrid-840.webp 840w" sizes="(min-width:1069px) 302px, (min-width:735px) 245px, min(59vw, 238px)" width="560" height="1218" loading="lazy" decoding="async" alt="Controls screen of the hybrid car: sound the horn, flash the lights, and the door lock card with the time of the last report."></div>
-                  <span class="island" aria-hidden="true"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card" role="group" aria-roledescription="slide" aria-label="5 of 7">
             <div class="copy">
               <p class="tag">Parking History</p>
               <h3>Where you parked before.</h3>
@@ -738,7 +719,22 @@
             <div class="shot">
               <div class="phone">
                 <div class="body">
-                  <div class="screen"><img src="img/screens/history-560.webp" srcset="img/screens/history-360.webp 360w, img/screens/history-560.webp 560w, img/screens/history-840.webp 840w" sizes="(min-width:1069px) 302px, (min-width:735px) 245px, min(59vw, 238px)" width="560" height="1218" loading="lazy" decoding="async" alt="Parking History: five of six stops from the last few days, by street and time, two of them named Work and Gym, with search, an edit button and a key to the colours."></div>
+                  <div class="screen"><img src="img/screens/history-560.webp" srcset="img/screens/history-360.webp 360w, img/screens/history-560.webp 560w, img/screens/history-840.webp 840w" sizes="(min-width:1069px) 302px, (min-width:735px) 245px, min(59vw, 238px)" width="560" height="1218" loading="lazy" decoding="async" alt="Parking History: six stops, three of them named, by street and time, with today’s stop on Strada Benjamin Franklin first, and search, filters and an edit button."></div>
+                  <span class="island" aria-hidden="true"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" role="group" aria-roledescription="slide" aria-label="5 of 7">
+            <div class="copy">
+              <p class="tag">Widgets</p>
+              <h3>Parked, on your Home Screen.</h3>
+              <p>The Parking Location widget shows your car, its charge, fuel and range, the lock status where reported and, if you allow it, the address, with Directions on medium and large.</p>
+            </div>
+            <div class="shot">
+              <div class="phone">
+                <div class="body">
+                  <div class="screen"><img src="img/screens/widget-560.webp" srcset="img/screens/widget-360.webp 360w, img/screens/widget-560.webp 560w, img/screens/widget-840.webp 840w" sizes="(min-width:1069px) 302px, (min-width:735px) 245px, min(59vw, 238px)" width="560" height="1218" loading="lazy" decoding="async" alt="Two Riviera widgets on the Home Screen, each with a front view of the car. The medium one shows battery and fuel levels, range, consumption, charging time left, the lock status with its time, the parking street and a Directions button. The small one shows the levels, range, a lock icon and the city."></div>
                   <span class="island" aria-hidden="true"></span>
                 </div>
               </div>
@@ -746,14 +742,14 @@
           </div>
           <div class="card" role="group" aria-roledescription="slide" aria-label="6 of 7">
             <div class="copy">
-              <p class="tag">Widgets</p>
-              <h3>Parked, on your Home Screen.</h3>
-              <p>The Parking Location widget shows fuel, range and, if you allow it, the parking address, with Directions a tap away.</p>
+              <p class="tag">Shortcuts</p>
+              <h3>Set it up once.</h3>
+              <p>Have Riviera read the car when CarPlay disconnects, or start a parking timer by touching an NFC tag.</p>
             </div>
             <div class="shot">
               <div class="phone">
                 <div class="body">
-                  <div class="screen"><img src="img/screens/widget-560.webp" srcset="img/screens/widget-360.webp 360w, img/screens/widget-560.webp 560w, img/screens/widget-840.webp 840w" sizes="(min-width:1069px) 302px, (min-width:735px) 245px, min(59vw, 238px)" width="560" height="1218" loading="lazy" decoding="async" alt="A medium Riviera widget on an otherwise empty Home Screen: fuel level, range, consumption and the parking address, with a Directions button."></div>
+                  <div class="screen"><img src="img/screens/shortcuts-560.webp" srcset="img/screens/shortcuts-360.webp 360w, img/screens/shortcuts-560.webp 560w, img/screens/shortcuts-840.webp 840w" sizes="(min-width:1069px) 302px, (min-width:735px) 245px, min(59vw, 238px)" width="560" height="1218" loading="lazy" decoding="async" alt="Shortcuts and Automations help: Riviera’s actions in the Shortcuts app, a recipe that reads the car when CarPlay disconnects, and a parking timer started from an NFC tag."></div>
                   <span class="island" aria-hidden="true"></span>
                 </div>
               </div>
@@ -761,14 +757,14 @@
           </div>
           <div class="card" role="group" aria-roledescription="slide" aria-label="7 of 7">
             <div class="copy">
-              <p class="tag">Shortcuts</p>
-              <h3>Set it up once.</h3>
-              <p>Scan the receipt at the pump from the Action button or a shortcut, or add the price later without opening Riviera.</p>
+              <p class="tag">Themes</p>
+              <h3>Make it yours.</h3>
+              <p>Three colour themes for the Dashboard and the rest of the app, and the app icon changes with the theme.</p>
             </div>
             <div class="shot">
               <div class="phone">
                 <div class="body">
-                  <div class="screen"><img src="img/screens/shortcuts-560.webp" srcset="img/screens/shortcuts-360.webp 360w, img/screens/shortcuts-560.webp 560w, img/screens/shortcuts-840.webp 840w" sizes="(min-width:1069px) 302px, (min-width:735px) 245px, min(59vw, 238px)" width="560" height="1218" loading="lazy" decoding="async" alt="Shortcuts and Automations help, scrolled to the end: scan a fuel receipt from the Action button, add a fill-up price without opening Riviera, and a note on automations and App Lock."></div>
+                  <div class="screen"><img src="img/screens/themes-560.webp" srcset="img/screens/themes-360.webp 360w, img/screens/themes-560.webp 560w, img/screens/themes-840.webp 840w" sizes="(min-width:1069px) 302px, (min-width:735px) 245px, min(59vw, 238px)" width="560" height="1218" loading="lazy" decoding="async" alt="The Dashboard in a dark blue colour theme: small stars in the sky above the car and a thin horizon line under it, the lock status, then range, battery and fuel levels, consumption and odometer on dark cards."></div>
                   <span class="island" aria-hidden="true"></span>
                 </div>
               </div>
@@ -819,7 +815,7 @@
             <p>Install the optional Apple&nbsp;TV app. Then switch on “Show my car on Apple&nbsp;TV” in Settings&nbsp;› Data&nbsp;&amp;&nbsp;Sync&nbsp;› Apple&nbsp;TV.</p>
             <p class="fine">Arrives with the App Store release. Requires tvOS 18 or later.</p>
           </div>
-          <img class="tv" src="img/screens/tv-640.webp" srcset="img/screens/tv-640.webp 640w, img/screens/tv-960.webp 960w" sizes="(min-width:1069px) 520px, (min-width:735px) calc(55vw - 100px), calc(100vw - 92px)" width="640" height="360" loading="lazy" decoding="async" alt="The Apple TV app’s Car screen with the hybrid: range, fuel level, lock status, parking place and odometer.">
+          <img class="tv" src="img/screens/tv-640.webp" srcset="img/screens/tv-640.webp 640w, img/screens/tv-960.webp 960w" sizes="(min-width:1069px) 520px, (min-width:735px) calc(55vw - 100px), calc(100vw - 92px)" width="640" height="360" loading="lazy" decoding="async" alt="The Apple TV app’s Car screen: range, battery level while charging, fuel level, lock status, parking place and odometer.">
         </div>
       </div>
     </div>
@@ -929,15 +925,15 @@
       <a href="#main">Back to top</a>
     </div>
     <ol class="notes">
-      <li id="fn1">Screens use two sample cars with fictional figures: a hybrid, shown with a picture of a Renault Austral, and an electric car called “City EV”, an invented car that is not a Renault model. They are shown in English with Romanian region settings, kilometres and euros. Riviera follows your language, units (miles included) and currency. Once you sign in, Riviera shows your own car’s name and picture. The app’s built-in sample car is named “Sample car” and shown as a plain car silhouette. The Apple TV picture shows the same hybrid with a plain silhouette. It uses US number and time formats.</li>
+      <li id="fn1">Screens use the app’s demo car with fictional figures, a Renault Rafale plug-in hybrid shown with Renault’s picture of that model. They are shown in English with Romanian region settings, kilometres and euros. Riviera follows your language, units (miles included) and currency. Once you sign in, Riviera shows your own car’s name and picture. The demo car you can try in the app is named “Demo car”. The Apple TV picture shows the same car, with US number and time formats.</li>
       <li id="fn2">Riviera is free: no ads, no subscription and no paid features. Renault’s connected services are separate and may have their own terms.</li>
       <li id="fn3">Readings come from Renault’s servers and can arrive late or be missing.</li>
       <li id="fn4">Elsewhere, station locations appear without prices. Prices in Italy are read too, but not yet verified.</li>
     </ol>
     <div class="legal">
-      <p>Riviera is an independent app. It is not affiliated with, endorsed by, or sponsored by Renault s.a.s. The hybrid sample car in the iPhone screenshots is shown with a picture of a Renault Austral. Renault and Austral are trademarks of Renault s.a.s., used here only to say which cars Riviera works with. Other product and company names are trademarks of their owners. Apple, iPhone, iCloud, Apple TV, Apple Maps, Shortcuts, Siri and TestFlight are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc. Riviera is not made by, affiliated with, or endorsed by Apple Inc.</p>
+      <p>Riviera is an independent app. It is not affiliated with, endorsed by, or sponsored by Renault s.a.s. The demo car in the screenshots is shown with a picture of a Renault Rafale. Renault, Rafale and Austral are trademarks of Renault s.a.s., used here only to say which cars Riviera works with. Other product and company names are trademarks of their owners. Apple, iPhone, iCloud, Apple TV, Apple Maps, Shortcuts, Siri and TestFlight are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc. Riviera is not made by, affiliated with, or endorsed by Apple Inc.</p>
       <p>Data credits: fuel prices in Germany from <a href="https://creativecommons.tankerkoenig.de">Tankerkönig</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>) when you add your own free key; in Romania from <a href="https://monitorulpreturilor.info/">Monitorul Prețurilor Carburanților</a> (Consiliul Concurenței); in France from prix-carburants.gouv.fr (Ministère de l’Économie, Licence Ouverte 2.0); in Spain from geoportalgasolineras.es (Ministerio para la Transición Ecológica); in Austria from the E-Control Spritpreisrechner; in Italy from the Osservatorio Prezzi Carburanti (Ministero delle Imprese e del Made in Italy). Charger data from <a href="https://openchargemap.org">Open Charge Map</a> contributors (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>). Station, charger and dealer locations © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL). Weather data by <a href="https://open-meteo.com">Open-Meteo.com</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>). Maps in the app: Apple Maps.</p>
-      <p>© 2026 Ionuț Andrei Paraschiv · Last updated 17 November 2026</p>
+      <p>© 2026 Ionuț Andrei Paraschiv · Last updated 19 November 2026</p>
     </div>
   </div>
 </footer>
