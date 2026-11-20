@@ -1,5 +1,6 @@
 User-agent: Googlebot-Image
 Disallow: /img/
+Disallow: /try/img/
 
 User-agent: *
 Allow: /

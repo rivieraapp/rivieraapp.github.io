@@ -1,0 +1,1129 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<meta name="robots" content="max-image-preview:none, noimageindex">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Try Riviera</title>
+<link rel="canonical" href="https://rivieraapp.github.io/try/">
+<meta name="description" content="A click-through of the Riviera app with a sample car, nothing to install.">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<style>
+/* Layout: the phone on the left (framed on desktop, bare picture on phones), one short text column on the right, the controls under the headline. Dark first and neutral black like the app; the website's type and wording. */
+:root {
+  --bg: #000000;
+  --surface: #121212;
+  --surface-2: #1c1c1c;
+  --line: rgba(255, 255, 255, 0.16);
+  --fg: #f5f5f7;
+  --muted: #a1a1a6;
+  --faint: #86868b;
+  --accent: #2997ff;
+  --accent-ink: #ffffff;
+  --focus: #2997ff;
+  --track-off: #6e6e73;
+  --knob: #ffffff;
+  --island: #000000;
+  --ring-a: #ffffff;
+  --ring-b: #000000;
+  --toast-bg: rgba(28, 28, 30, 0.94);
+  --toast-fg: #f5f5f7;
+  --hint-line: rgba(41, 151, 255, 0.95);
+  --hint-glow: rgba(41, 151, 255, 0.55);
+  --hint-fill: rgba(41, 151, 255, 0.14);
+  --bz-1: #8e8e93;
+  --bz-2: #48484a;
+  --bz-3: #2c2c2e;
+  --bz-4: #1c1c1e;
+  --bz-5: #3a3a3c;
+  --bz-6: #7c7c80;
+  --bz-edge: rgba(255, 255, 255, 0.2);
+  --screen-edge: #060607;
+  --screen-bg: #1c1c1c;
+  --shadow: rgba(0, 0, 0, 0.8);
+  --lift: rgba(0, 0, 0, 0.35);
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f5f5f5;
+    --surface: #ffffff;
+    --surface-2: #ececec;
+    --line: rgba(0, 0, 0, 0.16);
+    --fg: #1d1d1f;
+    --muted: #5f5f64;
+    --faint: #6e6e73;
+    --accent: #0066cc;
+    --accent-ink: #ffffff;
+    --focus: #0071e3;
+    --track-off: #86868b;
+    --toast-bg: rgba(28, 28, 30, 0.94);
+    --toast-fg: #f5f5f7;
+    --hint-line: rgba(0, 113, 227, 0.95);
+    --hint-glow: rgba(0, 113, 227, 0.5);
+    --hint-fill: rgba(0, 113, 227, 0.13);
+    --bz-1: #8e8e93;
+    --bz-2: #48484a;
+    --bz-3: #2c2c2e;
+    --bz-4: #1c1c1e;
+    --bz-5: #3a3a3c;
+    --bz-6: #7c7c80;
+    --bz-edge: rgba(255, 255, 255, 0.2);
+    --screen-edge: #060607;
+    --screen-bg: #e4e4e4;
+    --shadow: rgba(0, 0, 0, 0.35);
+    --lift: rgba(0, 0, 0, 0.3);
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f5f5f5;
+  --surface: #ffffff;
+  --surface-2: #ececec;
+  --line: rgba(0, 0, 0, 0.16);
+  --fg: #1d1d1f;
+  --muted: #5f5f64;
+  --faint: #6e6e73;
+  --accent: #0066cc;
+  --accent-ink: #ffffff;
+  --focus: #0071e3;
+  --track-off: #86868b;
+  --toast-bg: rgba(28, 28, 30, 0.94);
+  --toast-fg: #f5f5f7;
+  --hint-line: rgba(0, 113, 227, 0.95);
+  --hint-glow: rgba(0, 113, 227, 0.5);
+  --hint-fill: rgba(0, 113, 227, 0.13);
+  --bz-1: #8e8e93;
+  --bz-2: #48484a;
+  --bz-3: #2c2c2e;
+  --bz-4: #1c1c1e;
+  --bz-5: #3a3a3c;
+  --bz-6: #7c7c80;
+  --bz-edge: rgba(255, 255, 255, 0.2);
+  --screen-edge: #060607;
+  --screen-bg: #e4e4e4;
+  --shadow: rgba(0, 0, 0, 0.35);
+  --lift: rgba(0, 0, 0, 0.3);
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 16px/1.5 var(--font);
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  padding-block: 0 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3, h4, p, ol, ul { margin: 0; }
+[hidden] { display: none !important; }
+ol, ul { padding: 0; list-style: none; }
+button { font: inherit; color: inherit; }
+.vh { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.demo { max-width: 880px; margin-inline: auto; padding-top: 12px; }
+
+/* The way home: one quiet link in a 44 px bar at the very top, in the flow (never over the phone). The body's top padding moved below the bar,
+   so everything under it sits where it did, 44 px lower; the room for the phone (--reserve, --pw) is cut by the same 44 px so the whole phone still fits. */
+:root { --nav: 44px; }
+.topnav { display: flex; align-items: center; height: var(--nav); margin-inline: auto; }
+/* the link is 32 px high with 6 px of room each side (pulled back by the same margin, so the chevron sits on the page's left edge) so the focus ring fits inside the bar;
+   the invisible ::after makes the tappable area the full 44 px bar. */
+.home {
+  position: relative; display: inline-flex; align-items: center; gap: 6px; height: 32px; padding-inline: 6px; margin-inline: -6px; border-radius: 8px; color: var(--fg);
+  font: 400 17px/1 var(--font); letter-spacing: -0.022em; text-decoration: none; -webkit-tap-highlight-color: transparent;
+}
+.home::after { content: ""; position: absolute; inset: -6px -6px; }
+.home svg { width: 8px; height: 15px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.home:hover { opacity: 0.7; }
+.home:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+
+/* Phones: one column. The title and Restart share a row, the phone comes next and is sized so that the whole phone, tab bar included,
+   fits the visible height (svh = the viewport with the browser's toolbars showing), then the Light / Dark switch and Back directly under it,
+   then everything else. */
+:root { --vh: 100vh; --reserve: calc(132px + var(--nav)); --extra: 0px; }
+@supports (height: 100svh) { :root { --vh: 100svh; } }
+.stage {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 12px; row-gap: 12px; align-items: start;
+  grid-template-areas: "title restart" "phone phone" "ctl ctl" "sample sample" "lede lede" "info info" "steps steps" "all all";
+}
+.col-dev, .col-side, .head, .chrome { display: contents; }
+h1 { grid-area: title; align-self: center; }
+#restart { grid-area: restart; align-self: center; }
+.sample { grid-area: sample; }
+.lede { grid-area: lede; }
+.phone { grid-area: phone; }
+.ctl { grid-area: ctl; }
+.info { grid-area: info; }
+.steps { grid-area: steps; }
+.all { grid-area: all; }
+
+h1 { font-size: 24px; line-height: 1.1; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+.lede { color: var(--muted); max-width: 30em; text-wrap: pretty; }
+
+.sample {
+  display: flex; align-items: center; gap: 8px; min-width: 0;
+  padding: 8px 14px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface);
+  color: var(--fg); font-size: 13px; line-height: 1.3; font-weight: 600; letter-spacing: 0;
+}
+.sample::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+
+.btn {
+  appearance: none; -webkit-appearance: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 0 18px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface-2);
+  color: var(--fg); font-size: 14px; line-height: 1; font-weight: 600; letter-spacing: 0; cursor: pointer; touch-action: manipulation;
+}
+.btn:hover:not([aria-disabled="true"]) { border-color: var(--faint); }
+.btn[aria-disabled="true"] { opacity: 0.4; cursor: default; }
+.btn svg { width: 16px; height: 16px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.btn:focus-visible, .sw:focus-visible, .seg button:focus-visible, .all summary:focus-visible, .all button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+/* the phone: the picture is never wider than 430 px and never taller than the visible height, so its tab bar is not below the fold (unless the window is shorter than about 640 px: then the phone stops shrinking and the page scrolls) */
+.phone { justify-self: center; width: clamp(200px, calc((var(--vh) - var(--reserve) - var(--extra)) * 0.4599 + 2px), min(100%, 430px)); margin: 0; }
+.phone .body { position: relative; width: 100%; border: 1px solid var(--line); border-radius: 26px; overflow: hidden; background: var(--screen-bg); }
+.screen { position: relative; aspect-ratio: 1206 / 2622; overflow: hidden; background: var(--screen-bg); container-type: inline-size; isolation: isolate; }
+.island { display: none; }
+
+/* isolation: a layer's z-indexed parts (the sticky strips, the hint) must not escape into the screen's stacking context: during a cross-fade the OLD layer's strips would paint over the whole NEW layer. */
+.layer { position: absolute; inset: 0; outline: none; isolation: isolate; }
+.layer.lift { box-shadow: -10px 0 30px var(--lift); }
+.pic { display: block; width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; -webkit-user-drag: none; }
+.hs {
+  position: absolute; margin: 0; padding: 0; border: 0; background: transparent; cursor: pointer;
+  border-radius: 14px; border-radius: calc(var(--r, 3) * 1cqw) calc(var(--r, 3) * 1cqw) calc(var(--rb, var(--r, 3)) * 1cqw) calc(var(--rb, var(--r, 3)) * 1cqw);
+  -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+}
+.hs-g {
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity 0.35s ease;
+  border: 2px solid var(--hint-line); background: var(--hint-fill);
+  box-shadow: 0 0 16px 2px var(--hint-glow), inset 0 0 14px var(--hint-glow);
+}
+/* Two-tone ring (white inside, black outside): readable on light and dark pictures and apart from the blue hint glow, which stands down on the focused area. */
+.hs:focus-visible { outline: 3px solid var(--ring-a); outline-offset: 0; box-shadow: 0 0 0 6px var(--ring-b); }
+.hs:focus-visible .hs-g { opacity: 1; animation: none; border-width: 3px; }
+.hints .hs-g, .flash .hs-g { opacity: 1; }
+@keyframes breathe { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: no-preference) {
+  .hints .hs-g, .flash .hs-g { animation: breathe 1.6s ease-in-out infinite; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hs-g { transition: none; }
+}
+
+/* A tall screen: ONE scroller the size of the phone screen. Inside it the document is the stacked tiles of the tall picture, with
+   the tappable areas on top of them. The status band and the tab bar band are position: sticky inside the same scroller, so a swipe,
+   the wheel or the keys on them scroll the content, and a tap on them reaches no area hidden behind them. Sizes are in cqw (1 cqw =
+   1 % of the screen width) so one picture of 1206 px = 100 cqw; nothing here depends on the device. */
+.scroller {
+  position: absolute; inset: 0; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; scroll-padding-top: var(--top); scroll-padding-bottom: var(--bot); background: rgb(var(--er-t, 128 128 128));
+}
+.scroller::-webkit-scrollbar { display: none; width: 0; height: 0; }
+.scroller:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
+.doc { position: relative; width: 100%; background: rgb(var(--er-t, 128 128 128)); }
+.tile { position: absolute; left: 0; width: 100%; margin: 0; display: block; z-index: 0; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; -webkit-user-drag: none; }
+.doc .hs { z-index: 1; }
+.run { position: absolute; left: 0; width: 100%; z-index: 0; background: rgb(var(--er-b, 128 128 128)); }
+.sp { display: block; width: 100%; pointer-events: none; }
+.pt, .pb { position: sticky; width: 100%; z-index: 3; }
+/* The strips overdraw their outer edge by a few px in the page colour: the scroller's client height is a whole number of px while the screen is
+   fractional, so at some sizes WebKit leaves the strip up to a pixel short of the edge; the overdraw (clipped by the scroller) fills that sliver. */
+.pt { top: 0; box-shadow: 0 -4px 0 0 rgb(var(--er-pt, var(--er-t, 128 128 128))); }
+.pb { bottom: 0; box-shadow: 0 4px 0 0 rgb(var(--er-pb, var(--er-b, 128 128 128))); }
+.pimg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; object-fit: fill; pointer-events: none; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; }
+.pt .pimg { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - var(--fade, 0%)), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - var(--fade, 0%)), transparent); }
+.pb .pimg { -webkit-mask-image: linear-gradient(to bottom, transparent, #000 var(--fade, 0%)); mask-image: linear-gradient(to bottom, transparent, #000 var(--fade, 0%)); }
+/* where the strip fades out, a wash of the page colour keeps the compact title readable over whatever scrolls under it. It is off while the screen rests at the top, so the first screenful is the capture, untouched. */
+.wash { position: absolute; left: 0; width: 100%; pointer-events: none; opacity: 0; background: linear-gradient(to bottom, rgb(var(--er-t, 128 128 128) / 0.98), rgb(var(--er-t, 128 128 128) / 0.95) var(--wp, 55%), rgb(var(--er-t, 128 128 128) / 0)); }
+.pt .hs, .pb .hs { z-index: 2; }
+/* the app's compact title: it fades in once the large title has scrolled away */
+.ctitle {
+  position: absolute; left: 0; width: 100%; height: 10.94cqw; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none;
+  font: 600 4.23cqw/1 var(--font); letter-spacing: -0.01em; color: var(--ink, #111);
+}
+.more {
+  position: absolute; left: 50%; z-index: 4; display: inline-flex; align-items: center; gap: 1.2cqw; padding: 1.6cqw 3.4cqw; border-radius: 999px;
+  transform: translateX(-50%); background: var(--toast-bg); color: var(--toast-fg); font: 600 3.4cqw/1.2 var(--font); letter-spacing: 0;
+  pointer-events: none; opacity: 0; transition: opacity 0.25s; white-space: nowrap;
+}
+.more svg { width: 3.6cqw; height: 3.6cqw; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.more-on .more { opacity: 1; }
+.ind { position: absolute; right: 0.9cqw; top: 0; z-index: 4; width: max(3px, 0.9cqw); border-radius: 999px; background: rgba(128, 128, 128, 0.75); pointer-events: none; opacity: 0; transition: opacity 0.3s; }
+.ind.on { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .more, .ind { transition: none; } }
+
+/* controls */
+.ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.ctl > .look { order: 1; }
+.ctl > #back { order: 2; }
+.ctl > #hints { order: 3; }
+.ctl > .look-n { order: 4; flex: 1 0 100%; }
+.sw {
+  appearance: none; -webkit-appearance: none; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 4px 0 0;
+  border: 0; background: none; color: var(--fg); font-size: 14px; font-weight: 600; letter-spacing: 0; cursor: pointer; touch-action: manipulation;
+}
+.sw .trk { position: relative; flex: none; width: 44px; height: 26px; border-radius: 999px; background: var(--track-off); transition: background-color 0.2s; }
+.sw .trk::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: var(--knob); transition: transform 0.2s; }
+.sw[aria-checked="true"] .trk { background: var(--accent); }
+.sw[aria-checked="true"] .trk::after { transform: translateX(18px); }
+@media (prefers-reduced-motion: reduce) { .sw .trk, .sw .trk::after { transition: none; } }
+/* The app's look: a two-option radio group (Light, Dark). It changes the pictures of the app, not this page. */
+.look { display: flex; align-items: center; gap: 8px 12px; }
+.look-l { color: var(--muted); font-size: 13px; letter-spacing: 0; position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.seg { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.seg button {
+  appearance: none; -webkit-appearance: none; display: inline-flex; align-items: center; gap: 6px; min-height: 38px; padding: 0 16px 0 13px; border: 0; border-radius: 999px; background: none;
+  color: var(--muted); font-size: 14px; font-weight: 600; letter-spacing: 0; cursor: pointer; touch-action: manipulation;
+}
+.seg button svg { width: 15px; height: 15px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.seg button[aria-checked="true"] { background: var(--fg); color: var(--bg); }
+.look-n { color: var(--faint); font-size: 13px; line-height: 1.4; letter-spacing: 0; }
+.look-n .look-s { display: none; }
+.look-n .look-f { color: var(--fg); font-weight: 600; }
+.look-n:not(.has-f) { display: none; }
+/* The note a tap on an unavailable area shows: inside the picture, just above the tab bar, so it is seen where the finger is. */
+.toast {
+  position: absolute; left: 5%; right: 5%; bottom: 12%; z-index: 5; margin: 0; padding: 10px 14px; border-radius: 16px;
+  background: var(--toast-bg); color: var(--toast-fg); font-size: 13px; line-height: 1.35; letter-spacing: 0; text-align: center;
+  pointer-events: none; opacity: 0; transition: opacity 0.2s;
+}
+.toast:not(:empty) { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .toast { transition: none; } }
+.kbd-hint { display: none; }
+@media (hover: hover) and (pointer: fine) { .kbd-hint { display: inline; } }
+
+/* what the screen shows */
+.info h2 { font-size: 24px; line-height: 1.15; font-weight: 600; letter-spacing: -0.015em; text-wrap: balance; }
+.info p { margin-top: 8px; color: var(--muted); max-width: 34em; text-wrap: pretty; }
+.info .note { color: var(--faint); font-size: 14px; letter-spacing: 0; }
+.info .note:empty { display: none; }
+
+.steps h3, .all summary { font-size: 12px; line-height: 1.3; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+.steps ol { margin-top: 8px; display: grid; gap: 6px; counter-reset: s; }
+.steps li { display: flex; gap: 12px; counter-increment: s; color: var(--fg); }
+.steps li::before { content: counter(s); flex: none; width: 22px; height: 22px; margin-top: 1px; border: 1px solid var(--line); border-radius: 50%; color: var(--muted); font-size: 12px; line-height: 20px; text-align: center; font-variant-numeric: tabular-nums; }
+
+.all { border-top: 1px solid var(--line); }
+.all summary { display: flex; align-items: center; min-height: 44px; cursor: pointer; list-style: none; }
+.all summary::-webkit-details-marker { display: none; }
+.all summary::after { content: ""; margin-left: 10px; width: 6px; height: 6px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: translateY(-2px) rotate(45deg); }
+.all[open] summary::after { transform: translateY(1px) rotate(225deg); }
+.grp { padding-bottom: 8px; }
+.grp h4 { margin: 12px 0 2px; font-size: 13px; line-height: 1.3; font-weight: 600; letter-spacing: 0; color: var(--muted); }
+.grp ul { display: grid; }
+.all button {
+  appearance: none; -webkit-appearance: none; display: flex; align-items: center; gap: 8px; width: 100%; min-height: 44px; padding: 0; border: 0; background: none;
+  color: var(--fg); font-size: 15px; text-align: left; letter-spacing: 0; cursor: pointer; touch-action: manipulation;
+}
+.all button:hover { color: var(--accent); }
+.all button[aria-current="true"] { color: var(--accent); font-weight: 600; }
+.tag { margin-left: auto; padding: 2px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--faint); font-size: 11px; line-height: 1.3; letter-spacing: 0.02em; white-space: nowrap; }
+
+.foot { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); display: grid; gap: 10px; color: var(--faint); font-size: 13px; line-height: 1.45; letter-spacing: 0; max-width: 46em; }
+.foot p { text-wrap: pretty; }
+
+/* wider screens: the phone in its frame, the text column beside it, the switch and Back right under the headline */
+@media (min-width: 900px) {
+  body { padding-block: 0 48px; }
+  .demo { padding-top: 24px; }
+  /* the bar's link starts where the phone's frame starts: the same width as the two columns, centred like them */
+  .topnav { max-width: calc(var(--pw) + 64px + 340px); }
+  .stage, .topnav {
+    --pw: 400px;
+  }
+  .stage {
+    grid-template-areas: none; grid-template-columns: var(--pw) minmax(0, 340px); column-gap: 64px; row-gap: 0; justify-content: center; align-items: start;
+  }
+  @supports (height: 100svh) { .stage, .topnav { --pw: clamp(250px, calc((100svh - 112px - var(--nav) - var(--extra)) / 2.108), 400px); } }
+  .col-dev { display: flex; flex-direction: column; gap: 12px; }
+  .col-side { display: flex; flex-direction: column; gap: 24px; padding-top: 2px; }
+  .head { display: block; }
+  .chrome { display: flex; align-items: center; justify-content: space-between; gap: 8px 12px; }
+  .sample { flex: 1 1 0; }
+  .lede { margin-top: 8px; }
+  .phone { justify-self: auto; width: var(--pw); max-width: none; }
+  .phone .body {
+    padding: calc(var(--pw) * 0.028); border: 0; border-radius: calc(var(--pw) * 0.1734); overflow: visible;
+    background: linear-gradient(140deg, var(--bz-1), var(--bz-2) 14%, var(--bz-3) 38%, var(--bz-4) 62%, var(--bz-5) 86%, var(--bz-6));
+    box-shadow: inset 0 0 0 1px var(--bz-edge), 0 40px 80px -20px var(--shadow);
+  }
+  .screen { border-radius: calc(var(--pw) * 0.1454); box-shadow: 0 0 0 calc(var(--pw) * 0.0195) var(--screen-edge); }
+  .island {
+    display: block; position: absolute; left: 50%; top: calc(var(--pw) * 0.0535); width: calc(var(--pw) * 0.2955); height: calc(var(--pw) * 0.0868);
+    border-radius: 999px; background: var(--island); transform: translateX(-50%); pointer-events: none;
+  }
+  h1 { font-size: 36px; }
+  .ctl > #back { order: 1; }
+  .ctl > #hints { order: 2; }
+  .ctl > .look { order: 3; flex: 1 0 100%; }
+  .look-l { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip-path: none; white-space: normal; }
+  .look-n .look-s { display: inline; }
+  .look-n:not(.has-f) { display: block; }
+}
+
+/* Without JavaScript only the Dashboard picture is shown (the noscript image), not an empty frame with dead buttons.
+   The .js class is set by the one-line script that opens the stage, so this needs no media-query support. */
+.phone noscript img { display: block; width: 100%; height: auto; border-radius: 26px; }
+.phone noscript p { margin-bottom: 10px; color: var(--muted); }
+.stage:not(.js) .phone .body, .stage:not(.js) .ctl, .stage:not(.js) .chrome .btn, .stage:not(.js) .steps, .stage:not(.js) .all, .stage:not(.js) .info h2 { display: none; }
+
+@media (forced-colors: active) {
+  .hs-g { border-color: Highlight; background: transparent; box-shadow: none; }
+  .btn, .seg, .sample, .tag { border-color: ButtonText; }
+  .sw .trk { border: 1px solid ButtonText; }
+  .seg button[aria-checked="true"] { background: Highlight; color: HighlightText; }
+  .island { background: CanvasText; }
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="Site"><a class="home" href="../" aria-label="Riviera home"><svg viewBox="0 0 8 15" aria-hidden="true" focusable="false"><path d="M7 1.5 1 7.5l6 6"/></svg>Riviera</a></nav>
+
+<main class="demo" id="demo" aria-labelledby="demo-h">
+  <div class="stage hints" id="stage">
+    <script>document.getElementById('stage').classList.add('js');</script>
+    <div class="col-dev">
+      <div class="chrome">
+        <p class="sample" role="note">Sample data. Nothing here talks to a car or to Renault.</p>
+        <button type="button" class="btn" id="restart" tabindex="0"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8a5.5 5.5 0 1 0 1.8-4.1"/><path d="M2.4 2v3.2h3.2"/></svg>Restart</button>
+      </div>
+      <figure class="phone">
+        <div class="body">
+          <div class="screen" id="screen"></div>
+          <p class="toast" id="msg" role="status" aria-live="polite"></p>
+          <span class="island" aria-hidden="true"></span>
+        </div>
+        <noscript><p>The demo needs JavaScript to be tapped through. This is the Dashboard.</p><img src="img/dashboard-f-560.webp" alt="The Riviera Dashboard with the sample car My Rafale. The demo needs JavaScript to be tapped through." width="560"></noscript>
+      </figure>
+    </div>
+    <div class="col-side">
+      <div class="head">
+        <h1 id="demo-h">Try Riviera</h1>
+        <p class="lede">Tap through pictures of the real app, using a sample car. You need no Renault account for this, and there is nothing to install.</p>
+      </div>
+      <div class="ctl">
+        <div class="look" id="look">
+          <span class="look-l" id="look-l">Show the app in</span>
+          <div class="seg" role="radiogroup" aria-labelledby="look-l" id="look-seg"></div>
+        </div>
+        <button type="button" class="btn" id="back" tabindex="0"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M10 2.5 4.5 8 10 13.5"/></svg>Back</button>
+        <button type="button" class="sw" id="hints" tabindex="0" role="switch" aria-checked="true"><span class="trk" aria-hidden="true"></span>Show tappable areas</button>
+        <p class="look-n" id="look-n"><span class="look-s">Light and Dark change the app in the pictures, not this page.</span> <span class="look-f" id="look-f"></span></p>
+      </div>
+      <div class="info">
+        <h2 id="s-title"></h2>
+        <p id="s-cap"></p>
+        <p class="note" id="s-note"></p>
+      </div>
+      <div class="steps">
+        <h3>How it works</h3>
+        <ol>
+          <li>Tap what glows.</li>
+          <li id="st-scroll" hidden>Scroll a screen to see the rest of it.</li>
+          <li>Switch the app between Light and Dark.</li>
+          <li>Use the tabs at the bottom of the screen.</li>
+          <li><span>Press Back to go back.<span class="kbd-hint"> Esc works too.</span></span></li>
+        </ol>
+      </div>
+      <details class="all" id="all">
+        <summary>All screens</summary>
+        <div class="grp" id="all-list"></div>
+      </details>
+    </div>
+  </div>
+  <div class="foot">
+    <p>These pictures are captures of the real Riviera app, taken in an iPhone simulator, with the sample car &ldquo;My Rafale&rdquo;, shown with Renault&rsquo;s picture of a Rafale. The pictures are not edited, apart from being cut and joined as described below. The one exception is the Renault emblem on the grille of the car in the Home Screen widgets, which is covered. In Light, the Dashboard, Controls and Finance were captured on a plain grey backdrop so that the joined pictures show no seams, and the Home Screen picture shows Apple&rsquo;s own icons and wallpaper around Riviera&rsquo;s widgets. Every figure, and the car&rsquo;s position, is made up, and the times in the pictures, such as &ldquo;1 minute ago&rdquo;, do not change. Light and Dark are the app&rsquo;s own two appearances on iOS.</p>
+    <p id="foot-tall" hidden>A screen that scrolls is one tall picture, joined from several captures of the app taken at different scroll positions. The status bar at the top and the tab bar at the bottom are cut from captures of the same screen and stay in place while the content moves under them.</p>
+    <p>The real app works with Renault cars that appear in a My Renault account. This demo signs in to nothing. In the app itself, the sample car you can open without an account is named &ldquo;Demo car&rdquo;.</p>
+    <p>Riviera is independent and unofficial. It is not made by, affiliated with, endorsed by or sponsored by Renault s.a.s. Renault and Rafale are trademarks of Renault s.a.s., used here only to say which cars Riviera works with. Apple, iPhone, Apple Maps, Shortcuts and CarPlay are trademarks of Apple Inc., registered in the U.S. and other countries and regions. Riviera is not made by, affiliated with, or endorsed by Apple Inc.</p>
+    <p>This demo sets no cookies and uses no analytics. It keeps one setting in your browser&rsquo;s storage on this device: whether you chose Light or Dark. That setting never leaves your device.</p>
+  </div>
+  <p class="vh" id="live" aria-live="polite" aria-atomic="true"></p>
+</main>
+
+<script>
+const MANIFEST = {"version":2,"start":"dashboard","car":"My Rafale","widths":[360,560,840],"keys":"demo","reviewTags":false,"looks":[{"id":"light","label":"Light"},{"id":"dark","label":"Dark"}],"groups":["Dashboard","Ownership","Controls","Settings","Home Screen"],"synthetic":false,"screens":[{"id":"dashboard","title":"Dashboard","group":"Dashboard","tab":"dashboard","caption":"Range on fuel and charge, the battery and fuel levels, the time charging has left, the lock status where the car reports it, average consumption, the odometer against the lease allowance, a map of where the car is parked, and the next maintenance item.","note":"The lock status is the last one the car reported. Riviera cannot lock or unlock the car.","tapPath":true,"hotspots":[{"x":4.1459,"y":30.5762,"w":91.7081,"h":12.7929,"r":4.8,"to":"fuel","label":"Open Fuel and Charging Records"},{"x":4.1459,"y":45.3819,"w":43.6982,"h":9.512,"r":4.8,"to":"consumption","label":"Open Consumption"},{"x":52.1559,"y":45.3819,"w":43.6982,"h":9.512,"r":4.8,"to":"mileage","label":"Open Mileage History"},{"x":4.1459,"y":57.1271,"w":91.7081,"h":17.3146,"r":4.8,"rb":0,"to":"parking","label":"Open the full-screen map"},{"x":7.9602,"y":82.2994,"w":40.8789,"h":4.1356,"r":99,"to":"history","label":"Open Parking History"},{"x":51.2438,"y":82.2994,"w":40.796,"h":4.1356,"r":99,"note":"Directions opens your maps app, which this demo cannot do.","label":"Directions"},{"x":4.1459,"y":89.0267,"w":91.7081,"h":9.9531,"r":4.8,"note":"In the app this card opens the Service Schedule. In this demo it is under Ownership, Services.","label":"Maintenance"},{"x":5.71,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"dashboard","label":"Dashboard tab","via":"fade","tab":"dashboard","replace":true,"pinned":true},{"x":28.69,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"lease","label":"Ownership tab","via":"fade","tab":"ownership","replace":true,"pinned":true},{"x":50.0,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"controls","label":"Controls tab","via":"fade","tab":"controls","replace":true,"pinned":true},{"x":71.31,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"settings","label":"Settings tab","via":"fade","tab":"settings","replace":true,"pinned":true}],"tall":{"h":3627,"tiles":[[0,3627]],"ov":12,"top":186,"bottom":262,"fadeTop":60,"fadeBottom":40,"wash":80,"runway":262,"title":"My Rafale","titleY":256,"titleFrom":60,"titleTo":150},"edge":{"light":{"t":[241,241,241],"b":[240,240,240],"pt":[241,241,241],"pb":[237,237,237]},"dark":{"t":[0,0,0],"b":[0,0,0],"pt":[0,0,0],"pb":[0,0,0]}},"pics":{"light":{"b":"dashboard"},"dark":{"b":"dashboard-dark"}}},{"id":"fuel","title":"Fuel and Charging Records","group":"Dashboard","tab":"dashboard","parent":"dashboard","caption":"Fuel level and range with the time of the reading, average consumption, fuel and charging cost per distance, and fuel totals.","note":"Riviera shows how old the latest reading is.","tapPath":true,"hotspots":[{"x":2.86,"y":6.46,"w":13.33,"h":6.35,"r":99,"to":"@back","label":"Back","pinned":true},{"x":5.71,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"dashboard","label":"Dashboard tab","via":"fade","tab":"dashboard","replace":true,"pinned":true},{"x":28.69,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"lease","label":"Ownership tab","via":"fade","tab":"ownership","replace":true,"pinned":true},{"x":50.0,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"controls","label":"Controls tab","via":"fade","tab":"controls","replace":true,"pinned":true},{"x":71.31,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"settings","label":"Settings tab","via":"fade","tab":"settings","replace":true,"pinned":true}],"tall":{"h":5503,"tiles":[[0,3618],[3618,1885]],"ov":12,"top":340,"bottom":262,"fadeTop":40,"fadeBottom":40,"wash":80,"runway":262},"edge":{"light":{"t":[242,242,247],"b":[241,241,246],"pt":[242,242,247],"pb":[235,235,240]},"dark":{"t":[0,0,0],"b":[0,0,0],"pt":[0,0,0],"pb":[0,0,0]}},"pics":{"light":{"b":"fuel"},"dark":{"b":"fuel-dark"}}},{"id":"consumption","title":"Consumption","group":"Dashboard","tab":"dashboard","parent":"dashboard","caption":"The average from four measured fill-ups, a chart of each fill-up by month, and the best and worst fill-up, with tabs for the price trend and the cost of each fill-up.","note":"The Price Trend and Fill Cost tabs are not in this demo.","tapPath":true,"hotspots":[{"x":2.86,"y":6.46,"w":13.33,"h":6.35,"r":99,"to":"@back","label":"Back","pinned":true},{"x":5.71,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"dashboard","label":"Dashboard tab","via":"fade","tab":"dashboard","replace":true,"pinned":true},{"x":28.69,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"lease","label":"Ownership tab","via":"fade","tab":"ownership","replace":true,"pinned":true},{"x":50.0,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"controls","label":"Controls tab","via":"fade","tab":"controls","replace":true,"pinned":true},{"x":71.31,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"settings","label":"Settings tab","via":"fade","tab":"settings","replace":true,"pinned":true}],"tall":{"h":4687,"tiles":[[0,3618],[3618,1069]],"ov":12,"top":340,"bottom":262,"fadeTop":40,"fadeBottom":40,"wash":80,"runway":262,"title":"Consumption","titleY":256,"titleFrom":60,"titleTo":150},"edge":{"light":{"t":[255,255,255],"b":[255,255,255],"pt":[255,255,255],"pb":[251,251,251]},"dark":{"t":[0,0,0],"b":[0,0,0],"pt":[0,0,0],"pb":[0,0,0]}},"pics":{"light":{"b":"consumption"},"dark":{"b":"consumption-dark"}}},{"id":"mileage","title":"Mileage History","group":"Dashboard","tab":"dashboard","parent":"dashboard","caption":"Odometer, distance this year and the monthly average, with a chart of the odometer over time next to the contract pace.","tapPath":true,"hotspots":[{"x":2.86,"y":6.46,"w":13.33,"h":6.35,"r":99,"to":"@back","label":"Back","pinned":true},{"x":5.71,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"dashboard","label":"Dashboard tab","via":"fade","tab":"dashboard","replace":true,"pinned":true},{"x":28.69,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"lease","label":"Ownership tab","via":"fade","tab":"ownership","replace":true,"pinned":true},{"x":50.0,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"controls","label":"Controls tab","via":"fade","tab":"controls","replace":true,"pinned":true},{"x":71.31,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"settings","label":"Settings tab","via":"fade","tab":"settings","replace":true,"pinned":true}],"tall":{"h":3118,"tiles":[[0,3118]],"ov":12,"top":340,"bottom":262,"fadeTop":40,"fadeBottom":40,"wash":80,"runway":262,"title":"Mileage History","titleY":256,"titleFrom":60,"titleTo":150},"edge":{"light":{"t":[255,255,255],"b":[254,254,254],"pt":[255,255,255],"pb":[251,251,251]},"dark":{"t":[0,0,0],"b":[0,0,0],"pt":[0,0,0],"pb":[0,0,0]}},"pics":{"light":{"b":"mileage"},"dark":{"b":"mileage-dark"}}},{"id":"parking","title":"Parking map","group":"Dashboard","parent":"dashboard","caption":"A full-screen map of the last position the car reported, with the parked car, nearby places, and Satellite, History and Directions buttons.","note":"Directions opens your maps app, which this demo cannot do.","tapPath":true,"hotspots":[{"x":1.79,"y":7.83,"w":13.33,"h":6.35,"r":99,"to":"@back","label":"Close the map"},{"x":35.36,"y":89.54,"w":29.4,"h":5.81,"r":99,"to":"history","label":"Open Parking History"}],"pics":{"light":{"b":"parking"},"dark":{"b":"parking-dark"}}},{"id":"history","title":"Parking History","group":"Dashboard","parent":"parking","caption":"Six stops, three of them labelled, listed by street and time. Today’s stop, on Strada Benjamin Franklin, is first.","note":"Riviera keeps up to 90 days of stops on the iPhone.","tapPath":true,"hotspots":[{"x":2.86,"y":7.12,"w":13.33,"h":6.35,"r":99,"to":"@back","label":"Back"}],"pics":{"light":{"b":"history"},"dark":{"b":"history-dark"}}},{"id":"lease","title":"Ownership, Finance","group":"Ownership","tab":"ownership","caption":"A ring showing how much of the lease mileage allowance is used, with time progress, days left, the expected distance and the pace, the contract dates, and a forecast with the projected distance and penalty.","tapPath":true,"hotspots":[{"x":49.05,"y":6.68,"w":22.86,"h":5.91,"r":99,"to":"documents","label":"Services","via":"fade","replace":true,"pinned":true},{"x":4.063,"y":66.538,"w":43.7811,"h":7.0243,"r":4.8,"to":"costs","label":"Contract Start: open What the car costs (in the app the Contract page comes first)"},{"x":52.073,"y":66.538,"w":43.864,"h":7.0243,"r":4.8,"to":"costs","label":"Contract End: open What the car costs (in the app the Contract page comes first)"},{"x":4.063,"y":75.8394,"w":91.874,"h":22.2694,"r":4.8,"note":"This page is not part of the demo.","label":"Forecast"},{"x":5.71,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"dashboard","label":"Dashboard tab","via":"fade","tab":"dashboard","replace":true,"pinned":true},{"x":28.69,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"lease","label":"Ownership tab","via":"fade","tab":"ownership","replace":true,"pinned":true},{"x":50.0,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"controls","label":"Controls tab","via":"fade","tab":"controls","replace":true,"pinned":true},{"x":71.31,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"settings","label":"Settings tab","via":"fade","tab":"settings","replace":true,"pinned":true}],"tall":{"h":2591,"tiles":[[0,2591]],"ov":12,"top":340,"bottom":262,"fadeTop":40,"fadeBottom":40,"wash":80,"runway":262},"edge":{"light":{"t":[241,241,241],"b":[241,241,241],"pt":[241,241,241],"pb":[237,237,237]},"dark":{"t":[0,0,0],"b":[0,0,0],"pt":[0,0,0],"pb":[0,0,0]}},"pics":{"light":{"b":"lease"},"dark":{"b":"lease-dark"}}},{"id":"documents","title":"Ownership, Services","group":"Ownership","tab":"ownership","caption":"The Service Schedule with the next service, and a card the app calls Required by Law. It tracks four dates you enter: driving licence, periodic inspection (ITP), third-party insurance (RCA) and the road vignette, each with its due date. Below: service history, repairs, fuel and charging records and service costs, official references, optional insurance and roadside assistance.","note":"Riviera’s deadlines are estimates and reminders, not legal advice.","tapPath":true,"hotspots":[{"x":28.1,"y":6.68,"w":22.86,"h":5.91,"r":99,"to":"lease","label":"Finance","via":"fade","replace":true,"pinned":true},{"x":4.1459,"y":9.6342,"w":91.7081,"h":4.4662,"r":4.8,"to":"services","label":"Open Service Schedule"},{"x":5.71,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"dashboard","label":"Dashboard tab","via":"fade","tab":"dashboard","replace":true,"pinned":true},{"x":28.69,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"documents","label":"Ownership tab","via":"fade","tab":"ownership","replace":true,"pinned":true},{"x":50.0,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"controls","label":"Controls tab","via":"fade","tab":"controls","replace":true,"pinned":true},{"x":71.31,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"settings","label":"Settings tab","via":"fade","tab":"settings","replace":true,"pinned":true}],"tall":{"h":4702,"tiles":[[0,3618],[3618,1084]],"ov":12,"top":340,"bottom":262,"fadeTop":40,"fadeBottom":40,"wash":80,"runway":262},"edge":{"light":{"t":[242,242,247],"b":[242,242,247],"pt":[242,242,247],"pb":[238,238,243]},"dark":{"t":[0,0,0],"b":[0,0,0],"pt":[0,0,0],"pb":[0,0,0]}},"pics":{"light":{"b":"documents"},"dark":{"b":"documents-dark"}}},{"id":"services","title":"Service Schedule","group":"Ownership","tab":"ownership","parent":"documents","caption":"Nothing overdue or due soon, eleven items on schedule and one not tracked, with due dates and, for most, the distance left; then the periodic inspection date and the tyre set.","tapPath":true,"hotspots":[{"x":2.86,"y":6.46,"w":13.33,"h":6.35,"r":99,"to":"@back","label":"Back","pinned":true},{"x":5.71,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"dashboard","label":"Dashboard tab","via":"fade","tab":"dashboard","replace":true,"pinned":true},{"x":28.69,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"documents","label":"Ownership tab","via":"fade","tab":"ownership","replace":true,"pinned":true},{"x":50.0,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"controls","label":"Controls tab","via":"fade","tab":"controls","replace":true,"pinned":true},{"x":71.31,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"settings","label":"Settings tab","via":"fade","tab":"settings","replace":true,"pinned":true}],"tall":{"h":4504,"tiles":[[0,3618],[3618,886]],"ov":12,"top":340,"bottom":262,"fadeTop":40,"fadeBottom":40,"wash":80,"runway":262},"edge":{"light":{"t":[242,242,247],"b":[242,242,247],"pt":[242,242,247],"pb":[238,238,243]},"dark":{"t":[0,0,0],"b":[0,0,0],"pt":[0,0,0],"pb":[0,0,0]}},"pics":{"light":{"b":"services"},"dark":{"b":"services-dark"}}},{"id":"costs","title":"What the car costs","group":"Ownership","tab":"ownership","parent":"lease","caption":"The monthly cost and the cost per distance, as estimates, split into lease or credit instalments, insurance, vignette, inspection and other services, fuel, charging and maintenance. Depreciation and the buy-back price are not included.","note":"In the app this screen opens from the Contract page (Contract Start or Contract End, then What the car costs). The demo opens it straight from the tile.","tapPath":true,"hotspots":[{"x":2.86,"y":6.46,"w":13.33,"h":6.35,"r":99,"to":"@back","label":"Back"},{"x":5.71,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"dashboard","label":"Dashboard tab","via":"fade","tab":"dashboard","replace":true},{"x":28.69,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"lease","label":"Ownership tab","via":"fade","tab":"ownership","replace":true},{"x":50.0,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"controls","label":"Controls tab","via":"fade","tab":"controls","replace":true},{"x":71.31,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"settings","label":"Settings tab","via":"fade","tab":"settings","replace":true}],"pics":{"light":{"b":"costs"},"dark":{"b":"costs-dark"}}},{"id":"controls","title":"Controls","group":"Controls","tab":"controls","caption":"What the Controls screen offers, on cars that support it: sound the horn, flash the lights or both, and start climate pre-conditioning with a target temperature. On the few models that report it, the door lock card shows the lock status with the time of the report.","note":"Nothing is sent from this demo, and nothing here can reach a car. In the app, what works depends on your car and on what Renault’s service allows, and climate needs a plug-in or electric car. The lock card only shows the last status the car reported: Riviera cannot lock or unlock the car.","tapPath":true,"hotspots":[{"x":5.71,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"dashboard","label":"Dashboard tab","via":"fade","tab":"dashboard","replace":true,"pinned":true},{"x":28.69,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"lease","label":"Ownership tab","via":"fade","tab":"ownership","replace":true,"pinned":true},{"x":50.0,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"controls","label":"Controls tab","via":"fade","tab":"controls","replace":true,"pinned":true},{"x":71.31,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"settings","label":"Settings tab","via":"fade","tab":"settings","replace":true,"pinned":true}],"tall":{"h":3446,"tiles":[[0,3446]],"ov":12,"top":186,"bottom":262,"fadeTop":60,"fadeBottom":40,"wash":80,"runway":262,"title":"Controls","titleY":256,"titleFrom":60,"titleTo":150},"edge":{"light":{"t":[241,241,241],"b":[240,240,240],"pt":[241,241,241],"pb":[237,237,237]},"dark":{"t":[0,0,0],"b":[0,0,0],"pt":[0,0,0],"pb":[0,0,0]}},"pics":{"light":{"b":"controls"},"dark":{"b":"controls-dark"}}},{"id":"settings","title":"Settings","group":"Settings","tab":"settings","caption":"The Settings hub: the sample car, Vehicle, Notifications, Appearance, Language & Region, Data & Sync, Privacy & Security, Help & Support and About Riviera.","note":"In this demo the Light / Dark switch beside the phone stands in for Appearance.","tapPath":true,"hotspots":[{"x":3.9801,"y":27.7759,"w":92.0398,"h":5.1564,"r":4.8,"note":"Exit Demo Mode is not part of the demo.","label":"Exit Demo Mode"},{"x":3.9801,"y":43.5545,"w":92.0398,"h":5.2595,"r":4.8,"note":"This page is not part of the demo.","label":"Vehicle"},{"x":3.9801,"y":48.814,"w":92.0398,"h":5.3627,"r":0,"note":"This page is not part of the demo.","label":"Notifications"},{"x":3.9801,"y":54.1767,"w":92.0398,"h":5.3627,"r":0,"note":"This page is not part of the demo.","label":"Appearance"},{"x":3.9801,"y":59.5394,"w":92.0398,"h":5.4658,"r":4.8,"to":"language-region","label":"Open Language & Region"},{"x":3.9801,"y":70.9866,"w":92.0398,"h":5.3627,"r":4.8,"to":"data-sync","label":"Open Data & Sync"},{"x":3.9801,"y":82.2963,"w":92.0398,"h":5.2595,"r":4.8,"note":"This page is not part of the demo.","label":"Privacy & Security"},{"x":3.9801,"y":87.5559,"w":92.0398,"h":5.3627,"r":0,"to":"help-support","label":"Open Help & Support"},{"x":3.9801,"y":92.9185,"w":92.0398,"h":5.4658,"r":4.8,"note":"This page is not part of the demo.","label":"About Riviera"},{"x":5.71,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"dashboard","label":"Dashboard tab","via":"fade","tab":"dashboard","replace":true,"pinned":true},{"x":28.69,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"lease","label":"Ownership tab","via":"fade","tab":"ownership","replace":true,"pinned":true},{"x":50.0,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"controls","label":"Controls tab","via":"fade","tab":"controls","replace":true,"pinned":true},{"x":71.31,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"settings","label":"Settings tab","via":"fade","tab":"settings","replace":true,"pinned":true}],"tall":{"h":2909,"tiles":[[0,2909]],"ov":12,"top":340,"bottom":262,"fadeTop":40,"fadeBottom":40,"wash":80,"runway":262,"title":"Settings","titleY":256,"titleFrom":60,"titleTo":150},"edge":{"light":{"t":[242,242,247],"b":[242,242,247],"pt":[242,242,247],"pb":[238,238,243]},"dark":{"t":[0,0,0],"b":[0,0,0],"pt":[0,0,0],"pb":[0,0,0]}},"pics":{"light":{"b":"settings"},"dark":{"b":"settings-dark"}}},{"id":"data-sync","title":"Data & Sync","group":"Settings","tab":"settings","parent":"settings","caption":"iCloud sync, a shared garage, what the Apple TV app may show, backup export and import, and the history report.","tapPath":true,"hotspots":[{"x":2.86,"y":6.46,"w":13.33,"h":6.35,"r":99,"to":"@back","label":"Back","pinned":true},{"x":5.71,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"dashboard","label":"Dashboard tab","via":"fade","tab":"dashboard","replace":true,"pinned":true},{"x":28.69,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"lease","label":"Ownership tab","via":"fade","tab":"ownership","replace":true,"pinned":true},{"x":50.0,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"controls","label":"Controls tab","via":"fade","tab":"controls","replace":true,"pinned":true},{"x":71.31,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"settings","label":"Settings tab","via":"fade","tab":"settings","replace":true,"pinned":true}],"tall":{"h":4370,"tiles":[[0,3618],[3618,752]],"ov":12,"top":340,"bottom":262,"fadeTop":40,"fadeBottom":40,"wash":80,"runway":262},"edge":{"light":{"t":[242,242,247],"b":[242,242,247],"pt":[242,242,247],"pb":[238,238,243]},"dark":{"t":[0,0,0],"b":[0,0,0],"pt":[0,0,0],"pb":[0,0,0]}},"pics":{"light":{"b":"data-sync"},"dark":{"b":"data-sync-dark"}}},{"id":"language-region","title":"Language & Region","group":"Settings","tab":"settings","parent":"settings","caption":"The country, the app language, the currency, the units and the temperature scale.","tapPath":true,"hotspots":[{"x":2.86,"y":6.46,"w":13.33,"h":6.35,"r":99,"to":"@back","label":"Back"},{"x":5.71,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"dashboard","label":"Dashboard tab","via":"fade","tab":"dashboard","replace":true},{"x":28.69,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"lease","label":"Ownership tab","via":"fade","tab":"ownership","replace":true},{"x":50.0,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"controls","label":"Controls tab","via":"fade","tab":"controls","replace":true},{"x":71.31,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"settings","label":"Settings tab","via":"fade","tab":"settings","replace":true}],"pics":{"light":{"b":"language-region"},"dark":{"b":"language-region-dark"}}},{"id":"help-support","title":"Help & Support","group":"Settings","tab":"settings","parent":"settings","caption":"Vehicle data health, notes on using Riviera safely, answers to common questions, support links, tips, Shortcuts and Automations, the supported vehicles, diagnostics and the Demo Mode switch.","tapPath":true,"hotspots":[{"x":2.86,"y":6.46,"w":13.33,"h":6.35,"r":99,"to":"@back","label":"Back","pinned":true},{"x":3.9801,"y":71.7634,"w":92.0398,"h":2.1259,"r":0,"to":"shortcuts","label":"Open Shortcuts and Automations"},{"x":5.71,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"dashboard","label":"Dashboard tab","via":"fade","tab":"dashboard","replace":true,"pinned":true},{"x":28.69,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"lease","label":"Ownership tab","via":"fade","tab":"ownership","replace":true,"pinned":true},{"x":50.0,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"controls","label":"Controls tab","via":"fade","tab":"controls","replace":true,"pinned":true},{"x":71.31,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"settings","label":"Settings tab","via":"fade","tab":"settings","replace":true,"pinned":true}],"tall":{"h":7338,"tiles":[[0,3618],[3618,3720]],"ov":12,"top":340,"bottom":262,"fadeTop":40,"fadeBottom":40,"wash":80,"runway":262},"edge":{"light":{"t":[242,242,247],"b":[241,241,246],"pt":[242,242,247],"pb":[235,235,240]},"dark":{"t":[0,0,0],"b":[0,0,0],"pt":[0,0,0],"pb":[0,0,0]}},"pics":{"light":{"b":"help-support"},"dark":{"b":"help-support-dark"}}},{"id":"shortcuts","title":"Shortcuts and Automations","group":"Settings","tab":"settings","parent":"help-support","caption":"Riviera’s actions in the Shortcuts app, a recipe that reads the car when CarPlay disconnects, and a parking timer started from an NFC tag.","tapPath":true,"hotspots":[{"x":2.86,"y":6.46,"w":13.33,"h":6.35,"r":99,"to":"@back","label":"Back","pinned":true},{"x":5.71,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"dashboard","label":"Dashboard tab","via":"fade","tab":"dashboard","replace":true,"pinned":true},{"x":28.69,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"lease","label":"Ownership tab","via":"fade","tab":"ownership","replace":true,"pinned":true},{"x":50.0,"y":90.64,"w":21.31,"h":6.96,"r":99,"to":"controls","label":"Controls tab","via":"fade","tab":"controls","replace":true,"pinned":true},{"x":71.31,"y":90.64,"w":22.98,"h":6.96,"r":99,"to":"settings","label":"Settings tab","via":"fade","tab":"settings","replace":true,"pinned":true}],"tall":{"h":5431,"tiles":[[0,3618],[3618,1813]],"ov":12,"top":340,"bottom":262,"fadeTop":40,"fadeBottom":40,"wash":80,"runway":262},"edge":{"light":{"t":[242,242,247],"b":[242,242,247],"pt":[242,242,247],"pb":[238,238,243]},"dark":{"t":[0,0,0],"b":[0,0,0],"pt":[0,0,0],"pb":[0,0,0]}},"pics":{"light":{"b":"shortcuts"},"dark":{"b":"shortcuts-dark"}}},{"id":"widget","title":"Home Screen widgets","group":"Home Screen","caption":"Two Riviera widgets on the Home Screen. The medium one shows battery and fuel levels, range, consumption, the lock status with its time and the parking street. The small one shows the levels, range, a lock icon and the city.","note":"A widget opens the app. The Directions button opens your maps app, which this demo cannot do.","tapPath":false,"allScreensOnly":true,"hotspots":[{"x":6.79,"y":10.41,"w":86.55,"h":12.6,"r":4.8,"rb":0,"to":"dashboard","label":"Open Riviera from the medium widget","via":"fade"},{"x":6.79,"y":33.3,"w":40.48,"h":18.73,"r":4.8,"to":"dashboard","label":"Open Riviera from the small widget","via":"fade"},{"x":6.79,"y":67.47,"w":17.86,"h":10.13,"r":4.8,"to":"dashboard","label":"Open the Riviera app","via":"fade"}],"pics":{"light":{"b":"widget"},"dark":{"b":"widget-dark"}}}]};
+
+(function () {
+  'use strict';
+  var M = MANIFEST;
+  var DUR = 260, HINT_MS = 2500, STACK_MAX = 60;
+  var FW = 1206, FH = 2622;                           // the capture every screen is framed in (px); one picture width = 100 cqw
+  var SIZES = '(min-width: 900px) 378px, min(100vw - 32px, 430px)';
+  var EASE = 'cubic-bezier(0.32, 0.72, 0, 1)';
+  var LS_KEY = 'riviera-demo-look';
+
+  var byId = {};
+  M.screens.forEach(function (s) { byId[s.id] = s; });
+  var LOOKS = M.looks, FIRST = LOOKS[0].id, label = {};
+  LOOKS.forEach(function (l) { label[l.id] = l.label; });
+  var anyTall = M.screens.some(function (s) { return !!s.tall; });
+
+  function $(id) { return document.getElementById(id); }
+  function el(tag, cls) { var e = document.createElement(tag); if (cls) e.className = cls; return e; }
+  function cq(px) { return (px / FW * 100).toFixed(4) + 'cqw'; }
+  var stage = $('stage'), screenEl = $('screen'), backBtn = $('back'), restartBtn = $('restart'), hintBtn = $('hints');
+  var lookSeg = $('look-seg'), lookNoteEl = $('look-n'), lookFEl = $('look-f'), msgEl = $('msg'), liveEl = $('live');
+  var titleEl = $('s-title'), capEl = $('s-cap'), noteEl = $('s-note'), allEl = $('all'), listEl = $('all-list');
+  var reduceMQ = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
+
+  // The visitor's Light / Dark choice lives in localStorage (one key). Every read and write is guarded: the page works without it.
+  function readLook() {
+    try { var v = window.localStorage.getItem(LS_KEY); if (v && label[v]) return v; } catch (e) { /* storage is a convenience */ }
+    return FIRST;
+  }
+  function writeLook(v) { try { window.localStorage.setItem(LS_KEY, v); } catch (e) { /* storage is a convenience */ } }
+
+  var state = { screen: M.start, look: readLook(), stack: [], hints: true, first: true, busy: false, scrolled: false, relook: false };
+  var offsets = {};                                   // screen id -> scroll offset, in px of the 1206-wide capture
+  var openers = {};                                   // screen id -> {i: index of the area that was tapped to leave it, to: the screen it opened}
+  var flashT = 0, msgT = 0, cache = {}, token = 0;
+
+  function srcset(name) {
+    return M.widths.map(function (w) { return 'img/' + name + '-' + w + '.webp ' + w + 'w'; }).join(', ');
+  }
+  function src(name) { return 'img/' + name + '-' + M.widths[Math.min(1, M.widths.length - 1)] + '.webp'; }
+
+  // The picture a screen shows under a look; a screen without that look shows the first one (Light) and says so.
+  function picFor(scr, look) {
+    var p = scr.pics[look];
+    if (p) return { b: p.b, look: look, fell: false };
+    return { b: scr.pics[FIRST].b, look: FIRST, fell: true };
+  }
+  function names(scr, pic) {
+    if (!scr.tall) return [pic.b];
+    var out = [pic.b + '-pt'];
+    if (scr.tall.bottom) out.push(pic.b + '-pb');
+    scr.tall.tiles.forEach(function (t, i) { out.push(pic.b + '-t' + i); });
+    return out;
+  }
+  function chain(id) {
+    var out = [], p = byId[id].parent, n = 0;
+    while (p && n++ < 10) { out.unshift(p); p = byId[p].parent; }
+    return out;
+  }
+  function canBack() {
+    var s = byId[state.screen];
+    return state.stack.length > 0 || !!s.parent;
+  }
+
+  function say(text) {
+    clearTimeout(msgT);
+    msgEl.textContent = text;
+    msgT = setTimeout(function () { msgEl.textContent = ''; }, 4500);
+  }
+  function unsay() {
+    clearTimeout(msgT);
+    msgEl.textContent = '';
+  }
+  function flashHints() {
+    clearTimeout(flashT);
+    stage.classList.add('flash');
+    flashT = setTimeout(function () { stage.classList.remove('flash'); }, HINT_MS);
+  }
+  function setHints(on) {
+    state.hints = on;
+    stage.classList.toggle('hints', on);
+    hintBtn.setAttribute('aria-checked', String(on));
+  }
+
+  // Where the Back chevron of the screen being built leads (the same rule back() uses), for its accessible name.
+  function backTarget() {
+    var id = state.stack.length ? state.stack[state.stack.length - 1] : (byId[state.screen] && byId[state.screen].parent);
+    return id && byId[id] ? byId[id] : null;
+  }
+  // geo: {m:'flat'} percent of the picture | {m:'tall', H} percent of the tall picture | {m:'top'} / {m:'bot', bot}: percent of the
+  // 1206 x 2622 frame, inside a pinned strip (they stay put while the content scrolls).
+  function hotspot(h, scr, geo) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'hs';
+    b.tabIndex = 0;                      // explicit: Safari on a Mac skips a plain button when Tab is pressed (it needs Option+Tab) unless tabindex is set
+    var top, height;
+    if (geo.m === 'flat') { top = h.y + '%'; height = h.h + '%'; }
+    else if (geo.m === 'tall') { top = cq(h.y / 100 * geo.H); height = cq(h.h / 100 * geo.H); }
+    else if (geo.m === 'top') { top = cq(h.y / 100 * FH); height = cq(h.h / 100 * FH); }
+    else { top = cq(h.y / 100 * FH - (FH - geo.bot)); height = cq(h.h / 100 * FH); }
+    b.style.cssText = 'left:' + h.x + '%;top:' + top + ';width:' + h.w + '%;height:' + height + ';--r:' + (h.r == null ? 3 : h.r) + (h.rb == null ? '' : ';--rb:' + h.rb);
+    var lab = h.label;
+    if (h.to === '@back' && lab === 'Back') { var bt = backTarget(); if (bt) lab = 'Back to ' + bt.title; }
+    b.setAttribute('aria-label', lab);
+    b.setAttribute('data-hi', String(scr.hotspots.indexOf(h)));
+    if (h.tab && h.tab === scr.tab) b.setAttribute('aria-current', 'page');
+    var g = document.createElement('span');
+    g.className = 'hs-g';
+    g.setAttribute('aria-hidden', 'true');
+    b.appendChild(g);
+    b.addEventListener('click', function () { activate(h); });
+    return b;
+  }
+
+  function lum(rgb) { return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2]; }
+
+  // ---------- a screen = one layer. A flat screen is a picture; a tall screen is a scroller (see SCROLL_CONTRACT.md) ----------
+  function makeLayer(scr, pic, first, startY) {
+    var L = el('div', 'layer');
+    L.tabIndex = -1;
+    L.setAttribute('role', 'group');
+    L.setAttribute('aria-label', scr.title);
+    var need = [];
+    function mk(name, cls, alt, eager, wanted) {
+      var img = new Image();
+      img.className = cls;
+      img.decoding = 'async';
+      img.draggable = false;
+      img.alt = alt;
+      img.sizes = SIZES;
+      img.srcset = srcset(name);
+      img.src = src(name);
+      if (eager && 'fetchPriority' in img) img.fetchPriority = 'high';
+      if (wanted) need.push(img);
+      return img;
+    }
+    // A tap on the picture away from every glowing area shows where the tappable areas are.
+    L.addEventListener('click', function (e) { if (!(e.target.closest && e.target.closest('.hs'))) flashHints(); });
+    L.__id = scr.id;
+    L.__need = need;
+    L.__focus = L;
+
+    if (!scr.tall) {
+      var img = mk(pic.b, 'pic', scr.title + '. ' + scr.caption, first, true);
+      L.appendChild(img);
+      scr.hotspots.forEach(function (h) { L.appendChild(hotspot(h, scr, { m: 'flat' })); });
+      return L;
+    }
+
+    var T = scr.tall;
+    var edge = (scr.edge && scr.edge[pic.look]) || { t: [128, 128, 128], b: [128, 128, 128] };
+    L.style.setProperty('--er-t', edge.t.join(' '));
+    L.style.setProperty('--er-b', edge.b.join(' '));
+    if (edge.pt) L.style.setProperty('--er-pt', edge.pt.join(' '));
+    if (edge.pb) L.style.setProperty('--er-pb', edge.pb.join(' '));
+    L.style.setProperty('--ink', lum(edge.t) > 140 ? '#111111' : '#f5f5f7');
+    var sc = el('div', 'scroller');
+    sc.tabIndex = 0;
+    sc.setAttribute('role', 'region');
+    sc.setAttribute('aria-label', scr.title + ', scrolls');
+    sc.style.setProperty('--top', cq(T.top));
+    sc.style.setProperty('--bot', cq(T.bottom));
+    var doc = el('div', 'doc');
+    doc.style.height = cq(T.h + T.runway);
+    var geoTall = { m: 'tall', H: T.h };
+
+    // the pinned status strip (and the pinned hotspots that belong to it)
+    var pt = el('div', 'pt');
+    pt.style.height = cq(T.top);
+    pt.style.marginBottom = '-' + cq(T.top);
+    // The wash is solid (95 %) down to the bottom of the compact title (when the screen has one), then fades out over `wash` rows: no card text is ever
+    // printed under the title, and the app's own scroll-edge fade is about that deep too.
+    var wash = el('div', 'wash');
+    var washTop = T.top - T.fadeTop, washSolid = T.title ? Math.max(T.top, T.titleY + 44) : washTop + 0.55 * (T.fadeTop + T.wash);
+    var washEnd = T.title ? washSolid + T.wash : T.top + T.wash;
+    wash.style.top = cq(washTop);
+    wash.style.height = cq(washEnd - washTop);
+    wash.style.setProperty('--wp', ((washSolid - washTop) / (washEnd - washTop) * 100).toFixed(2) + '%');
+    pt.appendChild(wash);
+    L.__wash = wash;
+    var pim = mk(pic.b + '-pt', 'pimg', '', true, true);
+    pim.style.setProperty('--fade', (T.fadeTop / T.top * 100).toFixed(3) + '%');
+    pim.setAttribute('aria-hidden', 'true');
+    pt.appendChild(pim);
+    if (T.title) {
+      var ct = el('div', 'ctitle');
+      ct.textContent = T.title;
+      ct.setAttribute('aria-hidden', 'true');
+      ct.style.top = cq(T.titleY - 66);
+      pt.appendChild(ct);
+      L.__ct = ct;
+    }
+    doc.appendChild(pt);
+
+    // the stacked tiles (each carries a few rows of the next one, so there is no hairline between them)
+    T.tiles.forEach(function (t, i) {
+      var last = i === T.tiles.length - 1;
+      var im = mk(pic.b + '-t' + i, 'tile', i === 0 ? scr.title + '. ' + scr.caption : '', i === 0, t[0] <= startY + FH && t[0] + t[1] + T.ov >= startY);
+      im.style.top = cq(t[0]);
+      im.style.height = cq(t[1] + (last ? 0 : T.ov));
+      doc.appendChild(im);
+    });
+    if (T.runway) {
+      var run = el('div', 'run');
+      run.style.top = cq(T.h);
+      run.style.height = cq(T.runway);
+      doc.appendChild(run);
+    }
+
+    var pb = null, sp = null;
+    if (T.bottom) {
+      // a spacer (not a margin: a sticky box cannot leave its margin box) puts the tab bar strip at the end of the document
+      sp = el('div', 'sp');
+      sp.style.height = cq(T.h + T.runway - T.bottom);
+      pb = el('div', 'pb');
+      pb.style.height = cq(T.bottom);
+      var bim = mk(pic.b + '-pb', 'pimg', '', false, true);
+      bim.style.setProperty('--fade', (T.fadeBottom / T.bottom * 100).toFixed(3) + '%');
+      bim.setAttribute('aria-hidden', 'true');
+      pb.appendChild(bim);
+    }
+    scr.hotspots.forEach(function (h) {
+      if (h.pinned) {
+        if (h.y + h.h / 2 < 50) pt.appendChild(hotspot(h, scr, { m: 'top' }));
+        else if (pb) pb.appendChild(hotspot(h, scr, { m: 'bot', bot: T.bottom }));
+      } else doc.appendChild(hotspot(h, scr, geoTall));
+    });
+    if (pb) { doc.appendChild(sp); doc.appendChild(pb); }
+    sc.appendChild(doc);
+    L.appendChild(sc);
+
+    var more = el('div', 'more');
+    more.setAttribute('aria-hidden', 'true');
+    more.style.bottom = cq(T.bottom + 22);
+    more.innerHTML = '<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 6 8 10.5 12.5 6"/></svg>Scroll for more';
+    L.appendChild(more);
+    var ind = el('div', 'ind');
+    ind.setAttribute('aria-hidden', 'true');
+    L.appendChild(ind);
+
+    L.__scroller = sc;
+    L.__T = T;
+    L.__ind = ind;
+    L.__focus = sc;
+    L.__start = 0;
+    var raf = 0;
+    sc.addEventListener('scroll', function () {
+      if (raf) return;
+      raf = requestAnimationFrame(function () { raf = 0; onScroll(L); });
+    }, { passive: true });
+    L.__restore = function () { setY(L, startY); };
+    return L;
+  }
+
+  function pxPerUnit(L) { return (L.__scroller.getBoundingClientRect().width || FW) / FW; }
+  function setY(L, y) {
+    var sc = L.__scroller;
+    if (!sc || !sc.clientWidth) return;
+    // rounded to 1/100 px: 116.99999 would be cut to 116 by WebKit, one pixel (about 4 picture px on a phone) above the place that was left
+    sc.scrollTop = Math.round(y * pxPerUnit(L) * 100) / 100;
+    L.__start = sc.scrollTop;
+    L.__w = sc.clientWidth;                              // the width this offset belongs to
+    L.__set = sc.scrollTop;                              // what this call produced: its own scroll event must not overwrite the exact offset with a rounded one
+    offsets[L.__id] = y;
+    onScroll(L, true);
+  }
+  // true while scrollTop is something the browser did by itself (the screen was resized and scrollTop, in CSS px, no longer means the same place in the
+  // picture): the ResizeObserver puts it back from the stored offset, and until then scrollTop must not be taken for the visitor's place.
+  function layoutMoved(L) { return !!L.__w && L.__scroller.clientWidth !== L.__w; }
+  function onScroll(L, quiet) {
+    if (L.__dead) return;
+    var sc = L.__scroller, T = L.__T, k = pxPerUnit(L);
+    var theirs = layoutMoved(L), echo = L.__set != null && sc.scrollTop === L.__set;
+    var y;
+    if ((theirs || echo) && offsets[L.__id] != null) y = offsets[L.__id];
+    else { y = sc.scrollTop / k; offsets[L.__id] = y; L.__set = null; }
+    var max = sc.scrollHeight - sc.clientHeight;
+    // A content area's glow stops at the pinned strips: under the strips' fade it would show through as loose arcs above the tab bar (review B, 20 Nov).
+    var visTop = sc.scrollTop + T.top * k, visBot = sc.scrollTop + sc.clientHeight - T.bottom * k;
+    Array.prototype.forEach.call(sc.querySelectorAll('.doc > .hs > .hs-g'), function (g) {
+      var b = g.parentNode, t = b.offsetTop, h = b.offsetHeight;
+      var a = Math.max(-24, visTop - t), z = Math.max(-24, t + h - visBot);
+      g.style.clipPath = (t >= visBot || t + h <= visTop) ? 'inset(50%)' : (a <= -24 && z <= -24) ? '' : 'inset(' + a.toFixed(1) + 'px -24px ' + z.toFixed(1) + 'px -24px)';
+    });
+    if (!quiet && !theirs && !echo && !state.scrolled && Math.abs(sc.scrollTop - L.__start) > 3) {
+      state.scrolled = true;
+      Array.prototype.forEach.call(screenEl.querySelectorAll('.more-on'), function (n) { n.classList.remove('more-on'); });
+    }
+    L.classList.toggle('more-on', !state.scrolled && max - sc.scrollTop > 8);
+    // the wash and the compact title come in once the screen has left the top (the title only after the large title is gone)
+    // The wash comes in over the first 60 rows (the app's scroll-edge fade is there as soon as content moves under the bar): it covers what is
+    // left of the large title before the compact title starts to show.
+    var wp = Math.max(0, Math.min(1, y / 60));
+    if (L.__ct) {
+      var p = (y - T.titleFrom) / (T.titleTo - T.titleFrom);
+      p = Math.max(0, Math.min(1, p));
+      if (reduceMQ.matches) p = p > 0.5 ? 1 : 0;
+      L.__ct.style.opacity = String(p);
+    }
+    if (reduceMQ.matches) wp = wp > 0.5 ? 1 : 0;
+    if (L.__wash) L.__wash.style.opacity = String(wp);
+    var ind = L.__ind;
+    if (ind && max > 1) {
+      var top = T.top * k, track = sc.clientHeight - T.bottom * k - top;
+      var thumb = Math.max(28, track * sc.clientHeight / sc.scrollHeight);
+      ind.style.height = thumb + 'px';
+      ind.style.transform = 'translateY(' + (top + (track - thumb) * (sc.scrollTop / max)) + 'px)';
+      if (!quiet) {
+        ind.classList.add('on');
+        clearTimeout(L.__indT);
+        L.__indT = setTimeout(function () { ind.classList.remove('on'); }, 900);
+      }
+    }
+  }
+
+  // A focused tappable area is brought into view clear of the pinned bars (the keyboard's Tab moves through them).
+  screenEl.addEventListener('focusin', function (e) {
+    var t = e.target;
+    if (!t || !t.classList || !t.classList.contains('hs')) return;
+    var sc = t.closest('.scroller');
+    if (!sc || t.closest('.pt') || t.closest('.pb')) return;
+    var L = sc.parentNode, T = L.__T, k = pxPerUnit(L);
+    var s = sc.getBoundingClientRect(), r = t.getBoundingClientRect();
+    var top = s.top + T.top * k + 6, bot = s.bottom - T.bottom * k - 6;
+    if (r.top < top) sc.scrollTop += r.top - top;
+    else if (r.bottom > bot) sc.scrollTop += Math.min(r.bottom - bot, r.top - top);
+  });
+
+  // The screen width changes with the window: keep the same place in the picture.
+  if (window.ResizeObserver) {
+    var lastW = 0;
+    new ResizeObserver(function () {
+      var w = screenEl.clientWidth;
+      if (w === lastW) return;
+      lastW = w;
+      var L = screenEl.querySelector('.layer:not([inert])');
+      if (L && L.__scroller && offsets[L.__id] != null) setY(L, offsets[L.__id]);
+    }).observe(screenEl);
+  }
+
+  function decodeOne(img) {
+    if (img.decode) return img.decode().catch(function () {});
+    if (img.complete) return Promise.resolve();
+    return new Promise(function (res) { img.addEventListener('load', res); img.addEventListener('error', res); });
+  }
+  // The new picture is decoded before the old one goes: no blank flash. A slow network does not hold the screen for ever.
+  function ready(L) {
+    var wait = new Promise(function (res) { setTimeout(res, 700); });
+    return Promise.race([Promise.all((L.__need || []).map(decodeOne)), wait]);
+  }
+
+  function swap(old, nu, via, then) {
+    var had = old && screenEl.contains(document.activeElement);
+    function settle() {
+      if (old && old.parentNode) { old.__dead = true; old.parentNode.removeChild(old); }
+      nu.classList.remove('lift');
+      state.busy = false;
+      if (had) { try { (nu.__focus || nu).focus({ preventScroll: true }); } catch (e) { /* focus is a convenience */ } }
+      if (then) then();
+      if (state.relook) { state.relook = false; relook(); }
+    }
+    function put(before) {
+      if (before) screenEl.insertBefore(nu, before); else screenEl.appendChild(nu);
+      if (nu.__restore) nu.__restore();
+    }
+    if (!old || reduceMQ.matches || !nu.animate) {
+      put();
+      settle();
+      return;
+    }
+    state.busy = true;
+    old.setAttribute('inert', '');
+    var anims = [];
+    if (via === 'push') {
+      put();
+      nu.classList.add('lift');
+      anims.push(nu.animate([{ transform: 'translateX(100%)' }, { transform: 'translateX(0)' }], { duration: DUR, easing: EASE }));
+      anims.push(old.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(-28%)' }], { duration: DUR, easing: EASE, fill: 'forwards' }));
+    } else if (via === 'pop') {
+      put(old);
+      old.classList.add('lift');
+      anims.push(nu.animate([{ transform: 'translateX(-28%)' }, { transform: 'translateX(0)' }], { duration: DUR, easing: EASE }));
+      anims.push(old.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(100%)' }], { duration: DUR, easing: EASE, fill: 'forwards' }));
+    } else {
+      // fade, also the look change: the new layer fades in over the old one, which stays fully drawn underneath until it is covered
+      put();
+      anims.push(nu.animate([{ opacity: 0 }, { opacity: 1 }], { duration: via === 'look' ? 180 : DUR, easing: 'ease-out' }));
+    }
+    var done = false;
+    function finish() { if (done) return; done = true; settle(); }
+    Promise.all(anims.map(function (a) { return a.finished; })).then(finish, finish);
+    setTimeout(finish, DUR + 250);
+  }
+
+  function lookNote(pic) {
+    var txt = pic.fell ? 'The ' + label[state.look] + ' picture of this screen is not in this build. Showing ' + label[pic.look] + '.' : '';
+    lookFEl.textContent = txt;
+    lookNoteEl.classList.toggle('has-f', !!txt);
+    return txt;
+  }
+  function syncSeg() {
+    Array.prototype.forEach.call(lookSeg.children, function (b) {
+      var on = b.getAttribute('data-look') === state.look;
+      b.setAttribute('aria-checked', String(on));
+      b.tabIndex = on ? 0 : -1;
+    });
+  }
+
+  function updatePanel(announce, pic, o) {
+    var s = byId[state.screen];
+    titleEl.textContent = s.title;
+    capEl.textContent = s.caption;
+    noteEl.textContent = s.note || '';
+    unsay();
+    backBtn.setAttribute('aria-disabled', String(!canBack()));
+    syncSeg();
+    var fnote = lookNote(pic);
+    Array.prototype.forEach.call(listEl.querySelectorAll('button'), function (b) {
+      if (b.getAttribute('data-screen') === state.screen) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
+    });
+    // When focus moved into the new picture it announces the title itself; the live region is for focus left outside it.
+    liveEl.textContent = '';
+    if (o && o.lookChange) {
+      liveEl.textContent = fnote ? fnote : label[state.look] + ' look';
+      if (fnote) say(fnote);
+    } else if (announce !== false) liveEl.textContent = s.title;
+  }
+
+  // Show the current state: build the layer, wait for its picture, then animate it in.
+  //   via: 'push' opens at the top, 'pop' / 'fade' at the offset the screen had, 'look' keeps the offset of the screen on show.
+  function show(via, o) {
+    o = o || {};
+    var scr = byId[state.screen];
+    var pic = picFor(scr, state.look);
+    var mine = ++token;
+    var layer = makeLayer(scr, pic, !!o.first, via === 'push' ? 0 : (offsets[scr.id] || 0));
+    // Back with the keyboard: focus returns to the area that opened the screen we leave, not to the top of the screen (a keyboard visitor would have to Tab through everything again)
+    var op = via === 'pop' ? openers[scr.id] : null;
+    if (op && op.to === o.leaving) { var hb = layer.querySelector('[data-hi="' + op.i + '"]'); if (hb) layer.__focus = hb; }
+    var old = screenEl.querySelector('.layer:not([inert])');
+    var focusMoves = !!old && screenEl.contains(document.activeElement);
+    state.busy = true;
+    ready(layer).then(function () {
+      if (mine !== token) return;
+      swap(old, layer, via, preloadAround);
+      updatePanel(!focusMoves, pic, o);
+      if (!o.quiet) flashHints();
+    });
+  }
+  function relook() { saveOffset(); show('look', { lookChange: true, quiet: true }); }
+
+  function leaveFirst() {
+    if (state.first) { state.first = false; setHints(false); }
+  }
+
+  // The offset of the screen on show is written down at the moment it is left, from the scroller itself: the scroll listener only runs on an
+  // animation frame, and a frame that has not come yet (a busy or hidden page) must never cost the visitor their place.
+  function saveOffset() {
+    var L = screenEl.querySelector('.layer:not([inert])');
+    if (!L || !L.__scroller || L.__dead || !L.__scroller.clientWidth || layoutMoved(L)) return;
+    if (L.__set != null && L.__scroller.scrollTop === L.__set) return;          // not moved since it was set: the stored offset is the exact one
+    offsets[L.__id] = L.__scroller.scrollTop / pxPerUnit(L);
+  }
+  function go(id, via) {
+    if (state.busy || !byId[id] || id === state.screen) return;
+    saveOffset();
+    leaveFirst();
+    state.stack.push(state.screen);
+    if (state.stack.length > STACK_MAX) state.stack.shift();
+    offsets[id] = 0;                                   // a pushed screen is a new one: it opens at the top
+    state.screen = id;
+    show(via || 'push');
+  }
+  function back() {
+    if (state.busy) return;
+    var s = byId[state.screen];
+    saveOffset();
+    var to = state.stack.pop();
+    if (!to) {
+      if (s.parent) to = s.parent;
+      else { if (s.parentNote) say(s.parentNote); return; }
+    }
+    leaveFirst();
+    state.screen = to;                                 // the screen we return to keeps the offset it had when we left it
+    show('pop', { leaving: s.id });
+  }
+  function activate(h) {
+    if (state.busy) return;
+    if (h.note) { say(h.note); return; }
+    if (h.to === '@back') { back(); return; }
+    if (h.to === state.screen) { flashHints(); return; }   // the lit tab, or a segment already shown: show where to tap instead
+    if (h.replace) { jump(h.to); return; }                 // tabs and segments switch the root: no history, so Back does not replay them
+    if (!state.busy) openers[state.screen] = { i: byId[state.screen].hotspots.indexOf(h), to: h.to };
+    go(h.to, h.via || 'push');
+  }
+  // tabs and segments (keep the offset the root had) and the All screens list (opens at the top: opts.top)
+  function jump(id, opts) {
+    if (state.busy) return;
+    if (id === state.screen) {
+      if (opts && opts.top) {                                // the list says "opens at the top": also for the screen already on show
+        offsets[id] = 0;
+        var cur = screenEl.querySelector('.layer:not([inert])');
+        if (cur && cur.__scroller) setY(cur, 0);
+      }
+      flashHints();
+      return;
+    }
+    saveOffset();
+    leaveFirst();
+    state.stack = chain(id);
+    if (opts && opts.top) offsets[id] = 0;
+    state.screen = id;
+    show('fade');
+  }
+  // The All screens list comes last on the page, a long way from the phone: after a pick the phone is brought back into view, only when it is not
+  // already wholly on screen (smooth, or at once under Reduce Motion).
+  var phoneEl = document.querySelector('.phone');
+  function showPhone() {
+    var r = phoneEl.getBoundingClientRect(), vh = window.innerHeight || document.documentElement.clientHeight;
+    if (r.top >= 0 && r.bottom <= vh) return;
+    phoneEl.scrollIntoView({ block: r.height > vh ? 'start' : 'center', behavior: reduceMQ.matches ? 'auto' : 'smooth' });
+  }
+  function setLook(look) {
+    if (look === state.look || !label[look]) return;
+    state.look = look;
+    writeLook(look);
+    syncSeg();
+    if (state.busy) state.relook = true; else relook();
+  }
+  function restart() {
+    if (state.busy) return;
+    state.stack = [];
+    state.screen = M.start;
+    state.first = true;
+    state.scrolled = false;                            // the look is kept: it is the visitor's setting, not part of the walk
+    offsets = {};
+    setHints(true);
+    unsay();
+    show('fade');
+  }
+
+  // The next likely screens are fetched when the browser is idle, in both looks, so a tap or a look switch rarely waits for a picture.
+  function preloadOne(name) {
+    if (cache[name]) return;
+    var im = new Image();
+    im.sizes = SIZES;
+    im.srcset = srcset(name);
+    im.src = src(name);
+    cache[name] = im;
+  }
+  function preloadScreen(scr, look) {
+    if (!scr) return;
+    names(scr, picFor(scr, look)).forEach(preloadOne);
+  }
+  function preloadAround() {
+    var run = function () {
+      var base = byId[state.screen];
+      var seen = {}, list = [];
+      function want(id) {
+        if (!id || id === '@back' || seen[id] || !byId[id]) return;
+        seen[id] = true;
+        list.push(byId[id]);
+      }
+      base.hotspots.forEach(function (h) { want(h.to); });
+      want(base.parent);
+      if (state.stack.length) want(state.stack[state.stack.length - 1]);
+      var order = [state.look].concat(LOOKS.map(function (l) { return l.id; }).filter(function (k) { return k !== state.look; }));
+      preloadScreen(base, state.look);
+      list.forEach(function (s) { preloadScreen(s, state.look); });
+      order.slice(1).forEach(function (k) { preloadScreen(base, k); list.forEach(function (s) { preloadScreen(s, k); }); });
+    };
+    if (window.requestIdleCallback) window.requestIdleCallback(run, { timeout: 1500 });
+    else setTimeout(run, 250);
+  }
+
+  // The look switch: a two-option radio group. The arrow keys move and choose, like the platform's own.
+  var ICONS = {
+    light: '<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3"/><path d="M8 1.6v1.5M8 12.9v1.5M1.6 8h1.5M12.9 8h1.5M3.5 3.5l1.05 1.05M11.45 11.45l1.05 1.05M3.5 12.5l1.05-1.05M11.45 4.55l1.05-1.05"/></svg>',
+    dark: '<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.2 9.6A5.6 5.6 0 0 1 6.4 2.8a5.6 5.6 0 1 0 6.8 6.8z"/></svg>'
+  };
+  LOOKS.forEach(function (l) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('role', 'radio');
+    b.setAttribute('data-look', l.id);
+    b.setAttribute('aria-checked', String(l.id === state.look));
+    b.tabIndex = l.id === state.look ? 0 : -1;
+    if (ICONS[l.id]) b.insertAdjacentHTML('beforeend', ICONS[l.id]);
+    b.appendChild(document.createTextNode(l.label));
+    b.addEventListener('click', function () { setLook(l.id); });
+    lookSeg.appendChild(b);
+  });
+  lookSeg.addEventListener('keydown', function (e) {
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    var ids = LOOKS.map(function (l) { return l.id; }), i = ids.indexOf(state.look), n = ids.length, j = -1;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') j = (i + 1) % n;
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') j = (i - 1 + n) % n;
+    else if (e.key === 'Home') j = 0;
+    else if (e.key === 'End') j = n - 1;
+    if (j < 0) return;
+    e.preventDefault();
+    e.stopPropagation();
+    setLook(ids[j]);
+    var nb = lookSeg.children[j];
+    if (nb) nb.focus();
+  });
+
+  // All screens
+  M.groups.forEach(function (g) {
+    var items = M.screens.filter(function (s) { return s.group === g; });
+    if (!items.length) return;
+    var h = document.createElement('h4');
+    h.textContent = g;
+    var ul = document.createElement('ul');
+    items.forEach(function (s) {
+      var li = document.createElement('li');
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.tabIndex = 0;
+      b.setAttribute('data-screen', s.id);
+      b.appendChild(document.createTextNode(s.title));
+      if (M.reviewTags && s.tapPath === false && !s.allScreensOnly) {
+        var t = document.createElement('span');
+        t.className = 'tag';
+        t.textContent = 'no tap path yet';
+        b.appendChild(t);
+      }
+      b.addEventListener('click', function () { jump(s.id, { top: true }); showPhone(); });
+      li.appendChild(b);
+      ul.appendChild(li);
+    });
+    listEl.appendChild(h);
+    listEl.appendChild(ul);
+  });
+
+  backBtn.addEventListener('click', function () { if (backBtn.getAttribute('aria-disabled') !== 'true') back(); });
+  restartBtn.addEventListener('click', restart);
+  hintBtn.addEventListener('click', function () {
+    state.first = false;
+    setHints(!state.hints);
+  });
+  if (anyTall) { $('st-scroll').hidden = false; $('foot-tall').hidden = false; }
+  if (M.synthetic) {
+    // the test banner sits above the phone: take its height off the room the phone is sized to, so the whole phone still fits the window
+    var synth = $('synth');
+    synth.hidden = false;
+    var fitBanner = function () { document.documentElement.style.setProperty('--extra', (synth.offsetHeight + 12) + 'px'); };
+    fitBanner();
+    window.addEventListener('resize', fitBanner);
+  }
+
+  // Esc and Backspace go back, like the Back button. On the website the keys only work once a visitor has used the demo.
+  var live = M.keys !== 'demo';
+  if (!live) {
+    var demo = $('demo');
+    demo.addEventListener('pointerdown', function () { live = true; });
+    demo.addEventListener('focusin', function () { live = true; });
+    demo.addEventListener('focusout', function (e) { if (e.relatedTarget && !demo.contains(e.relatedTarget)) live = false; });
+    document.addEventListener('pointerdown', function (e) { if (!demo.contains(e.target)) live = false; });
+  }
+  document.addEventListener('keydown', function (e) {
+    if (!live || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey) return;
+    var t = e.target;
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+    if ((e.key === 'Escape' || e.key === 'Backspace') && canBack()) { e.preventDefault(); back(); }
+  });
+
+  show('fade', { first: true, quiet: false });
+})();
+</script>
+</body>
+</html>

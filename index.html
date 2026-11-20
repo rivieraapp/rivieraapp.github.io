@@ -177,6 +177,11 @@
 
   .step .lim { margin-top: 10px; }
 
+  /* try: one calm band between the story and the finer points, on the same black as both, so only the space sets it apart.
+     On narrow screens the story's last chapter already leaves the space above; on wide ones the pinned story ends flush (see the story block). */
+  .try { padding-block: 0 72px; }
+  .try-cta { margin-top: 28px; }
+
   /* highlights: a scroll-snap row of cards; the script adds the dots, arrows and play button */
   /* follows the story on the same black: the last chapter already leaves the space above */
   .hl-sec { padding-top: 24px; padding-bottom: 72px; }
@@ -310,6 +315,7 @@
     .unit { font-size: 21px; }
     .chapter { padding-block: 96px; }
     .chapter:last-child { padding-bottom: 128px; }
+    .try { padding-bottom: 104px; }
     .step h3 { margin-top: 8px; font-size: 40px; }
     .step .txt { margin-top: 20px; }
     .story .phone { --pw: 320px; }
@@ -413,6 +419,7 @@
     .step > p, .step > details { max-width: 22em; margin-inline: 0; }
     .step .txt { font-size: 21px; font-weight: 600; line-height: 1.38; letter-spacing: .011em; color: var(--text-3); }
     .step > .more { max-width: 27em; }
+    .try { padding-top: 112px; }
     .story .phone { --pw: inherit; justify-self: center; align-self: start; margin: 0; position: -webkit-sticky; position: sticky; top: var(--pin-top); }
   }
   /* story, layer 2: one pinned phone, screens fade over each other (needs the script's html.pin) */
@@ -654,6 +661,14 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <section id="try" class="try center" aria-labelledby="try-h">
+    <div class="w t center">
+      <h2 id="try-h" class="h2 rv">Take it for a spin.</h2>
+      <p class="sub rv rv1">Tap through Riviera in your browser. Nothing to install, and no account needed.</p>
+      <p class="try-cta rv rv2"><a class="pill" href="try/">Try Riviera</a></p>
     </div>
   </section>
 
@@ -933,7 +948,7 @@
     <div class="legal">
       <p>Riviera is an independent app. It is not affiliated with, endorsed by, or sponsored by Renault s.a.s. The car in the screenshots is shown with a picture of a Renault Rafale. Renault, Rafale and Austral are trademarks of Renault s.a.s., used here only to say which cars Riviera works with. Other product and company names are trademarks of their owners. Apple, iPhone, iCloud, Apple TV, Apple Maps, Shortcuts, Siri and TestFlight are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc. Riviera is not made by, affiliated with, or endorsed by Apple Inc.</p>
       <p>Data credits: fuel prices in Germany from <a href="https://creativecommons.tankerkoenig.de">Tankerkönig</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>) when you add your own free key; in Romania from <a href="https://monitorulpreturilor.info/">Monitorul Prețurilor Carburanților</a> (Consiliul Concurenței); in France from prix-carburants.gouv.fr (Ministère de l’Économie, Licence Ouverte 2.0); in Spain from geoportalgasolineras.es (Ministerio para la Transición Ecológica); in Austria from the E-Control Spritpreisrechner; in Italy from the Osservatorio Prezzi Carburanti (Ministero delle Imprese e del Made in Italy). Charger data from <a href="https://openchargemap.org">Open Charge Map</a> contributors (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>). Station, charger and dealer locations © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL). Weather data by <a href="https://open-meteo.com">Open-Meteo.com</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>). Maps in the app: Apple Maps.</p>
-      <p>© 2026 Ionuț Andrei Paraschiv · Last updated 19 November 2026</p>
+      <p>© 2026 Ionuț Andrei Paraschiv · Last updated 20 November 2026</p>
     </div>
   </div>
 </footer>
